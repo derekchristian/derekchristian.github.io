@@ -136,41 +136,29 @@
     ></a>
 		
 
-    <style>
-
-  /* Widget wrapper */
-  .newsletter-wrapper {
+  <style>
+  /* Centers the widget on the page */
+  .newsletter-center {
     width: 100%;
-    max-width: 500px;       /* adjust max width as needed */
-    overflow: hidden;       /* removes scrollbars */
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; /* optional spacing */
   }
 
-  /* Responsive iframe */
-  .newsletter-wrapper iframe {
+  /* Removes scrollbars + controls width */
+  .newsletter-center iframe {
     width: 100%;
-    height: 400px;          /* enough height to remove scrollbars */
+    max-width: 500px; 
+    height: 260px; /* enough to remove scrollbars */
     border: 0;
     overflow: hidden;
     display: block;
   }
-
-  /* Optional: increase height on small screens */
-  @media (max-width: 400px) {
-    .newsletter-wrapper iframe {
-      height: 450px;
-    }
-  }
 </style>
 
-<div class="newsletter-wrapper">
-  <iframe 
-    src="https://bandsintown.com/artist/15623307/email_signup_form?headerTextColor=rgba(0,0,0,1)&
-	  backgroundColor=rgba(255,255,255,1)&
-	  ctaBackgroundColor=rgba(0,0,0,1)&
-	  title=MAILING LIST&headerTextStyle=normal&
-	  headerText=Sign up to get the latest updates&font=Tahoma&ctaIcon=show&ctaBorderRadius=4px&
-	  ctaBorderWidth=2px&ctaBorderColor=rgba(255,255,255,1)&ctaFontColor=rgba(255,255,255,1)&
-	  alignment=center&emailInputField=show&ctaLabel=Subscribe&layout=narrow&locale=en" 
+<div class="newsletter-center">
+  <iframe
+    src="https://bandsintown.com/artist/15623307/email_signup_form?headerTextColor=rgba(0,0,0,1)&backgroundColor=rgba(255,255,255,1)&ctaBackgroundColor=rgba(0,0,0,1)&title=MAILING LIST&headerTextStyle=normal&headerText=Sign up to get the latest updates&font=Tahoma&ctaIcon=show&ctaBorderRadius=4px&ctaBorderWidth=2px&ctaBorderColor=rgba(255,255,255,1)&ctaFontColor=rgba(255,255,255,1)&alignment=center&emailInputField=show&ctaLabel=Subscribe&layout=narrow&locale=en"
     title="newsletter-widget">
   </iframe>
 </div>
