@@ -25,6 +25,15 @@ main {
     text-align: center; /* Adjust alignment as needed */
 }
 
+#seated-55fdf2c0 {
+  all: unset;
+  display: block;
+
+  /* optional: restore layout rules */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 a {
     text-decoration: none;
 }
