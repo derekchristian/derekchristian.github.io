@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="p:domain_verify" content="a3d0c21f67552dc762779776116e8d52"/>
+    <title>Shop Coming Soon</title>
+    <link rel="icon" href="IMGS/FAVICON.svg" type="image/svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap">
+  </head>
+  <header>
+       <a href="derekchristian.github.io"> 
+           <img src="IMGS/HEADER.svg" alt="Derek Christian">
+       </a> 
+    </header>
+  <h1>Coming Soon</h1>
+<body>
+  <section>
+    <h2>Stay Updated</h2>
+    <p>Merch is on the way—subscribe to stay updated</p>
+  </section>
+  <style>
+  /* Centers the widget on the page */
+  .newsletter-center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; /* optional spacing */
+  }
+
+  /* Removes scrollbars + controls width */
+  .newsletter-center iframe {
+    width: 100%;
+    max-width: 500px; 
+    height: 380px; /* enough to remove scrollbars */
+    border: 0;
+    overflow: hidden;
+    display: block;
+  }
+</style>
+
+<div class="newsletter-center">
+  <iframe src="https://bandsintown.com/artist/15623307/email_signup_form?headerTextColor=rgba(0,0,0,1)&backgroundColor=rgba(255,255,255,1)&ctaBackgroundColor=rgba(255,255,255,1)&title=MAILING LIST&headerTextStyle=normal&headerText=Sign up to get the latest updates&font=Tahoma&ctaIcon=show&ctaBorderRadius=4px&ctaBorderWidth=1px&ctaBorderColor=rgba(0,0,0,1)&ctaFontColor=rgba(0,0,0,1)&alignment=center&emailInputField=show&ctaLabel=Subscribe&layout=narrow&locale=en" title="newsletter-widget"></iframe>
+</div>
+
+ <footer>
+     <p>&copy; 2025 Derek Christian. All rights reserved.</p>
+ </footer>
+</body>
