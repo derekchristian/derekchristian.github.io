@@ -6,7 +6,7 @@ body {
     font-weight: 500;
     display: flex;
     flex-direction: column;
-    min-height: 50vh;/* Ensure full viewport height */
+    min-height: 100vh;
     background: #fff;
     color: #111;
 }
@@ -29,6 +29,7 @@ main {
 
 a {
     text-decoration: none;
+    color: #000;
 }
 
 /* ===================== Navigation ===================== */
@@ -38,26 +39,25 @@ a {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 3rem;          /* spacing between buttons */
+    gap: clamp(2rem, 5vw, 3rem); /* adaptive spacing */
     padding: 0;
-    margin: 0 auto 72px auto;
+    margin: 0 auto 2rem auto;
 }
 
 .main-nav ul li a,
 .footer-nav ul li a {
     display: inline-block;
-    color: #000;
     text-decoration: underline;
-    padding: 1vw 2vw;
+    padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem);
+    transition: all 0.2s ease;
 }
 
-/* Hover effect */
 .main-nav ul li a:hover,
 .footer-nav ul li a:hover {
     text-decoration: none;
 }
 
-/* ===================== Iframe Container ===================== */
+/* ===================== Iframe Containers ===================== */
 .iframe-container {
     width: 90%;
     max-width: 560px;
@@ -70,29 +70,22 @@ iframe {
     width: 100%;
     height: 100%;
     display: block;
+    border: none;
 }
 
-/* ===================== Buy / Form / Streaming Buttons ===================== */
-.buy-button-container,
-.form-container,
-.streaming-stores-nav {
-    margin: 20px auto 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* ===================== Newsletter Center ===================== */
+.newsletter-center {
     width: 90%;
-    max-width: 560px;
+    max-width: 500px;
+    margin: 40px auto;
 }
 
-.streaming-stores-nav {
-    padding: 1vw 2vw;
-    margin-top: 20px;
-    margin-bottom: 2vw;
-}
-
-.streaming-stores-nav img {
-    max-width: 10vw;
-    max-height: 10vw;
+.newsletter-center iframe {
+    width: 100%;
+    height: 380px;
+    border: 0;
+    overflow: hidden;
+    display: block;
 }
 
 /* ===================== Footer ===================== */
@@ -107,45 +100,44 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* ===================== Responsive Media Queries ===================== */
-@media only screen and (max-width: 900px) {
-    .iframe-container {
-        width: 100%;
-        max-width: none;
-    }
-
-    .buy-button-container,
-    .form-container {
-        width: 100%;
-    }
-
-    .main-nav ul,
-    .footer-nav ul {
-        gap: 5rem;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .main-nav ul,
-    .footer-nav ul {
-        gap: 5rem;
-    }
-    
+/* ===================== Responsive Adjustments ===================== */
+@media (max-width: 768px) {
     .iframe-container {
         width: 100%;
         max-width: none;
     }
 }
 
-@media only screen and (max-width: 320px) {
+@media (max-width: 480px) {
     .main-nav ul,
     .footer-nav ul {
-        gap: 5rem;
+        gap: clamp(1rem, 5vw, 2rem);
     }
-    
+
+    .main-nav ul li a,
+    .footer-nav ul li a {
+        padding: clamp(0.4rem, 1vw, 0.8rem) clamp(0.8rem, 2vw, 1.5rem);
+    }
+
     .iframe-container {
         width: 100%;
-        max-width: none;
+    }
+
+    .newsletter-center {
+        width: 95%;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 320px) {
+    .main-nav ul,
+    .footer-nav ul {
+        gap: clamp(0.8rem, 5vw, 1.5rem);
+    }
+
+    .main-nav ul li a,
+    .footer-nav ul li a {
+        padding: clamp(0.3rem, 1vw, 0.6rem) clamp(0.6rem, 2vw, 1rem);
     }
 }
 
