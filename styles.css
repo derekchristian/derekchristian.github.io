@@ -40,7 +40,6 @@ header img {
 .main-nav li a {
   text-transform: uppercase;
   padding: 10px 15px;
-  transition: color 0.3s;
 }
 
 /* ===================== Iframe Container (YouTube) ===================== */
@@ -73,7 +72,6 @@ header img {
 }
 
 .footer-nav a {
-  font-weight: bold;
   color: #000;
 }
 
