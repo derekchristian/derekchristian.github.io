@@ -50,18 +50,14 @@ header img {
 
 /* ===================== Iframe Container (YouTube) ===================== */
 .iframe-container {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin: 20px auto;
-  aspect-ratio: 16 / 9;
+  width: 560px;      /* fixed width */
+  height: 315px;     /* fixed height */
+  margin: 20px auto; /* center horizontally */
 }
+
 .iframe-container iframe {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin: 20px auto;
-  aspect-ratio: 16 / 9;
+  width: 560px;      /* fixed width */
+  height: 315px;     /* fixed height */
   border: none;
 }
 /* ===================== Footer ===================== */
