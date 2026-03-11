@@ -41,7 +41,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 2rem; /* new spacing between nav buttons */
+    gap: 5rem; /* new spacing between nav buttons */
     flex-wrap: wrap; /* allow wrapping on smaller screens */
 }
 
@@ -110,7 +110,7 @@ footer nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 2rem; /* new spacing between footer buttons */
+    gap: 5rem; /* new spacing between footer buttons */
     padding: 0;
     margin: 0 0 10px 0;
     flex-wrap: wrap; /* wrap on small screens */
