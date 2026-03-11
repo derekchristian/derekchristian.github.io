@@ -104,7 +104,6 @@ footer p {
 @media (max-width: 768px) {
     .iframe-container {
         width: 90%;       /* keep at 90% instead of 100% */
-        max-width: 560px; /* ensures it doesn't expand full width */
     }
 }
 
@@ -121,7 +120,6 @@ footer p {
 
     .iframe-container {
         width: 95%;  /* a tiny increase for very small screens */
-        max-width: 560px;
     }
 
     .newsletter-center {
