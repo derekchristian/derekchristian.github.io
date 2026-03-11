@@ -29,36 +29,38 @@ main {
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 /* ===================== Navigation ===================== */
-nav {
-    margin-bottom: 72px; /* Responsive margin */
-}
-
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 2rem; /* new spacing between nav buttons */
-    flex-wrap: wrap; /* allow wrapping on smaller screens */
+    flex-wrap: wrap; /* wrap buttons on small screens */
+    margin: 0 auto 72px auto;
+}
+
+nav ul li {
+    margin: 0 1.5rem; /* horizontal spacing between buttons */
 }
 
 nav a {
     color: #000;
     text-decoration: none;
-    padding: 1vw 2vw; /* responsive padding */
+    padding: 1vw 2vw;
     display: inline-block;
     font-size: 1rem;
 }
 
+/* Underline effect */
 .underline_text nav ul li a {
-    text-decoration: underline; /* Add underline on specific text */
+    text-decoration: underline;
 }
 
 .underline_text nav ul li a:hover {
-    text-decoration: none; /* Remove underline on hover */
+    text-decoration: none;
 }
 
 /* ===================== Iframe container ===================== */
@@ -110,10 +112,13 @@ footer nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 2rem; /* new spacing between footer buttons */
+    flex-wrap: wrap;
     padding: 0;
     margin: 0 0 10px 0;
-    flex-wrap: wrap; /* wrap on small screens */
+}
+
+footer nav ul li {
+    margin: 0 1.5rem; /* horizontal spacing for footer links */
 }
 
 footer nav ul li a {
@@ -133,12 +138,8 @@ footer p {
 
 /* ===================== Responsive Media Queries ===================== */
 @media only screen and (max-width: 48rem) { /* up to 768px */
-    nav ul {
-        gap: 1.5rem;
-        padding: 0.5vw 1vw;
-    }
-
-    nav a {
+    nav a,
+    footer nav ul li a {
         padding: 0.5vw 1vw;
     }
 
@@ -153,12 +154,8 @@ footer p {
 }
 
 @media only screen and (max-width: 30rem) { /* up to 480px */
-    nav ul {
-        gap: 1rem;
-        padding: 0.3vw 0.6vw;
-    }
-
-    nav a {
+    nav a,
+    footer nav ul li a {
         padding: 0.3vw 0.6vw;
     }
 
@@ -173,12 +170,18 @@ footer p {
 }
 
 @media only screen and (max-width: 20rem) { /* up to 320px */
-    nav ul {
-        gap: 0.8rem;
-        padding: 0.1vw 0.2vw;
+    nav ul,
+    footer nav ul {
+        gap: 0; /* ignore gap, using margin instead */
     }
 
-    nav a {
+    nav ul li,
+    footer nav ul li {
+        margin: 0 1rem; /* slightly reduce spacing for very small screens */
+    }
+
+    nav a,
+    footer nav ul li a {
         padding: 0.1vw 0.2vw;
     }
 
@@ -215,4 +218,5 @@ footer p {
         margin: 15px auto;
     }
 }
+
 
