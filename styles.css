@@ -134,7 +134,7 @@ footer p {
 /* ===================== Responsive Media Queries ===================== */
 @media only screen and (max-width: 48rem) { /* up to 768px */
     nav ul {
-        gap: 1.5rem;
+        gap: 2.5rem;
         padding: 0.5vw 1vw;
     }
 
@@ -154,7 +154,7 @@ footer p {
 
 @media only screen and (max-width: 30rem) { /* up to 480px */
     nav ul {
-        gap: 1rem;
+        gap: 2rem;
         padding: 0.3vw 0.6vw;
     }
 
@@ -174,7 +174,7 @@ footer p {
 
 @media only screen and (max-width: 20rem) { /* up to 320px */
     nav ul {
-        gap: 0.8rem;
+        gap: 1rem;
         padding: 0.1vw 0.2vw;
     }
 
