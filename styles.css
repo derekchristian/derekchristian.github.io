@@ -130,12 +130,22 @@ footer p {
     .footer-nav ul {
         gap: 5rem;
     }
+    
+    .iframe-container {
+        width: 100%;
+        max-width: none;
+    }
 }
 
 @media only screen and (max-width: 320px) {
     .main-nav ul,
     .footer-nav ul {
         gap: 5rem;
+    }
+    
+    .iframe-container {
+        width: 100%;
+        max-width: none;
     }
 }
 
