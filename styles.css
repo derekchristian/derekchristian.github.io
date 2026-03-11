@@ -141,7 +141,7 @@ footer p {
 /* ===================== Responsive Media Queries ===================== */
 @media only screen and (max-width: 48rem) { /* up to 768px */
     nav ul, footer nav ul {
-        gap: 2rem;
+        gap: 10rem;
     }
 
     nav a {
@@ -160,7 +160,7 @@ footer p {
 
 @media only screen and (max-width: 30rem) { /* up to 480px */
     nav ul, footer nav ul {
-        gap: 1.2rem;
+        gap: 10rem;
     }
 
     nav a {
