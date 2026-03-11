@@ -56,7 +56,14 @@ header img {
   margin: 20px auto;
   aspect-ratio: 16 / 9;
 }
-
+.iframe-container iframe {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
 /* ===================== Footer ===================== */
 .footer-nav {
   padding: 20px 10px;
