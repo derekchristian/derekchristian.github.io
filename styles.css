@@ -64,7 +64,7 @@ header img {
 }
 
 /* ===================== Newsletter ===================== */
-newsletter-center {
+.newsletter-center {
     width: 100%;
     display: flex;
     justify-content: center;
