@@ -76,14 +76,6 @@ iframe {
     display: block;
 }
 
-.buy-button-container {
-    margin: 20px auto 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%; /* Responsive width */
-    max-width: 560px; /* Limit maximum size */
-}
 
 .form-container  {
     margin: 20px auto 0;
@@ -92,20 +84,6 @@ iframe {
     align-items: center;
     width: 90%; /* Responsive width */
     max-width: 560px; /* Limit maximum size */
-}
-
-.streaming-stores-nav {
-    padding: 1vw 2vw; /* Responsive padding */
-    margin-right: 1vw; /* Responsive margin */
-    display: flex;
-    justify-content: center;
-    margin-top: 20px; /* Responsive margin */
-    margin-bottom: 2vw; /* Responsive margin */
-}
-
-.streaming-stores-nav img {
-    max-width: 10vw; /* Responsive width */
-    max-height: 10vw; /* Responsive height */
 }
 
 
@@ -134,15 +112,6 @@ footer nav ul {
         padding: 0.5vw 1vw; /* Responsive padding */
     }
 
-    .streaming-stores-nav {
-         padding: 0.5vw 1vw; /* Responsive padding */
-    }
-        
-
-    .streaming-stores-nav img {
-        max-width: 0.5rem; /* Responsive width */
-        max-height: 0.5rem; /* Responsive height */
-    }
 }
 
 @media only screen and (max-width: 30rem) {
@@ -153,15 +122,6 @@ footer nav ul {
     nav a {
         padding: 0.3vw 0.6vw; /* Responsive padding */
     }
-
-    .streaming-stores-nav {
-         padding: 0.3vw 0.6vw; /* Responsive padding */
-    }
-
-    .streaming-stores-nav img {
-        max-width: 0.5rem; /* Responsive width */
-        max-height: 0.5rem; /* Responsive height */
-    }
 }
 
 @media only screen and (max-width: 20rem) {
@@ -171,15 +131,6 @@ footer nav ul {
     nav a {
         padding: 0.1vw 0.2vw; /* Responsive padding */
     }
-
-    .streaming-stores-nav {
-         padding: 0.1vw 0.2vw; /* Responsive padding */
-    }
-
-    .streaming-stores-nav img {
-        max-width: 0.5rem; /* Responsive width */
-        max-height: 0.5rem; /* Responsive height */
-    }
 }
 @media (max-width: 768px) {
     .iframe-container {
@@ -187,9 +138,6 @@ footer nav ul {
         max-width: none; /* Remove max-width */
     }
 
-    .buy-button-container {
-        width: 100%; /* Adjust to full width */
-    }
 }
 
 @media (max-width: 480px) {
@@ -197,10 +145,6 @@ footer nav ul {
         width: 100%; /* Full width for very small screens */
     }
 
-    .buy-button-container {
-        width: 100%; /* Full width */
-        margin: 15px auto; /* Adjust margin for small screens */
-    }
 }
 
 
