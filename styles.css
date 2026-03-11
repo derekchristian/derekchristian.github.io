@@ -6,14 +6,14 @@ body {
     font-weight: 500;
     display: flex;
     flex-direction: column;
-    min-height: 50vh; /* Ensure full viewport height */
+    min-height: 50vh;
     background: #fff;
     color: #111;
 }
 
 header {
     text-align: center;
-    padding: 2vw 0; /* Responsive padding */
+    padding: 2vw 0;
 }
 
 header img {
@@ -23,51 +23,75 @@ header img {
 }
 
 main {
-    flex-grow: 1; /* Allow main content to grow */
+    flex-grow: 1;
     text-align: center;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
 }
 
 /* ===================== Navigation ===================== */
-nav ul {
+/* Main nav inside underline_text */
+.underline_text nav ul {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* wrap buttons on small screens */
+    flex-wrap: wrap;         /* wrap buttons on small screens */
     margin: 0 auto 72px auto;
 }
 
-nav ul li {
-    margin: 0 1.5rem; /* horizontal spacing between buttons */
+.underline_text nav ul li {
+    margin: 0 2rem;           /* spacing between buttons */
 }
 
-nav a {
+.underline_text nav ul li a {
     color: #000;
-    text-decoration: none;
+    text-decoration: underline;
     padding: 1vw 2vw;
     display: inline-block;
-    font-size: 1rem;
-}
-
-/* Underline effect */
-.underline_text nav ul li a {
-    text-decoration: underline;
 }
 
 .underline_text nav ul li a:hover {
     text-decoration: none;
 }
 
+/* Footer nav */
+footer nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+footer nav ul li {
+    margin: 0 2rem;           /* spacing between buttons */
+}
+
+footer nav ul li a {
+    color: #000;
+    text-decoration: none;
+    padding: 0.5vw 1vw;
+    display: inline-block;
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
 /* ===================== Iframe container ===================== */
 .iframe-container {
-    width: 90%; /* responsive width */
-    max-width: 560px; /* max size */
-    aspect-ratio: 16 / 9; /* maintain ratio */
+    width: 90%;
+    max-width: 560px;
+    aspect-ratio: 16 / 9;
     margin: 0 auto;
     position: relative;
 }
@@ -86,7 +110,7 @@ iframe {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%; /* responsive width */
+    width: 90%;
     max-width: 560px;
 }
 
@@ -101,45 +125,17 @@ iframe {
     max-height: 10vw;
 }
 
-/* ===================== Footer ===================== */
-footer {
-    margin-top: 38px;
-    text-align: center;
-    padding: 2vw 0;
-}
-
-footer nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0 0 10px 0;
-}
-
-footer nav ul li {
-    margin: 0 1.5rem; /* horizontal spacing for footer links */
-}
-
-footer nav ul li a {
-    color: #000;
-    text-decoration: none;
-    padding: 0.5vw 1vw;
-}
-
-footer nav ul li a:hover {
-    text-decoration: underline;
-}
-
-footer p {
-    margin-top: 10px;
-    font-size: 0.9rem;
-}
-
 /* ===================== Responsive Media Queries ===================== */
 @media only screen and (max-width: 48rem) { /* up to 768px */
-    nav a,
-    footer nav ul li a {
+    .underline_text nav ul, footer nav ul {
+        gap: 3rem; /* additional spacing if needed */
+    }
+
+    .underline_text nav ul li, footer nav ul li {
+        margin: 0 1.5rem;
+    }
+
+    nav a {
         padding: 0.5vw 1vw;
     }
 
@@ -154,8 +150,11 @@ footer p {
 }
 
 @media only screen and (max-width: 30rem) { /* up to 480px */
-    nav a,
-    footer nav ul li a {
+    .underline_text nav ul li, footer nav ul li {
+        margin: 0 1rem;
+    }
+
+    nav a {
         padding: 0.3vw 0.6vw;
     }
 
@@ -170,18 +169,11 @@ footer p {
 }
 
 @media only screen and (max-width: 20rem) { /* up to 320px */
-    nav ul,
-    footer nav ul {
-        gap: 0; /* ignore gap, using margin instead */
+    .underline_text nav ul li, footer nav ul li {
+        margin: 0 0.8rem;
     }
 
-    nav ul li,
-    footer nav ul li {
-        margin: 0 1rem; /* slightly reduce spacing for very small screens */
-    }
-
-    nav a,
-    footer nav ul li a {
+    nav a {
         padding: 0.1vw 0.2vw;
     }
 
@@ -218,5 +210,6 @@ footer p {
         margin: 15px auto;
     }
 }
+
 
 
