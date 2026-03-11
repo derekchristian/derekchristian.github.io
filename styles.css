@@ -110,6 +110,11 @@ section {
     max-width: 100%;
   }
 
+  .main-nav ul {
+    flex-direction: center;
+    gap: 10px;
+  }
+
   .newsletter-center iframe {
     height: 280px;
   }
