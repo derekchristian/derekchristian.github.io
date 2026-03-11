@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music | Derek Christian</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
+
+<style>
+/* Reset some basics */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+    color: #111;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.tagline {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+/* Links / Buttons */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Mechanical key style with icons */
+.link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    font-family: "Lacquer", system-ui;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+
+    background:;
+    color: #111;
+
+    padding: 14px 18px;
+    text-decoration: none;
+
+    border: 2px solid black;
+    border-radius: 0;
+
+    /* shadow above button */
+    box-shadow: -0.5px 1.5px 2.5px rgba(0,0,0,0.7);
+    transition: all 0.12s ease;
+
+}
+
+/* hover = slightly pressed */
+
+.link:hover {
+
+    transform: translateY(4px);
+    box-shadow: -1.2px 1px rgba(0,0,0,0.9);
+
+}
+
+/* click = fully pressed */
+
+.link:active {
+
+    transform: translateY(10px);
+    box-shadow: 0 0 0 black;
+
+}
+
+/* Make icons responsive */
+.link img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Music player */
+.music-player {
+    margin-top: 30px;
+}
+
+.music-player iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+    border-radius: 12px;
+}
+
+/* Social links */
+.socials {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.socials a {
+    color: #555;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.socials a:hover {
+    color: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    .tagline {
+        font-size: 0.9rem;
+    }
+    .link {
+        font-size: 1rem;
+        padding: 12px 16px;
+    }
+    .link img {
+        width: 18px;
+        height: 18px;
+    }
+    .music-player iframe {
+        height: 120px;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<img class="profile-img" src="profile.jpg" alt="Artist Photo">
+
+<h1>Your Artist Name</h1>
+
+<p class="tagline">Producer • Performer • Artist</p>
+
+<div class="links">
+
+<a class="link" href="#">
+    <img src="icons/spotify.png" alt="Spotify">
+    Spotify
+</a>
+
+<a class="link" href="#">
+    <img src="icons/apple-music.png" alt="Apple Music">
+    Apple Music
+</a>
+
+<a class="link" href="#">
+    <img src="icons/soundcloud.png" alt="SoundCloud">
+    SoundCloud
+</a>
+
+<a class="link" href="#">
+    <img src="icons/youtube.png" alt="YouTube">
+    YouTube
+</a>
+
+<a class="link" href="#">
+    <img src="icons/events.png" alt="Events">
+    Upcoming Shows
+</a>
+
+<a class="link" href="#">
+    <img src="icons/email.png" alt="Booking">
+    Booking / Contact
+</a>
+
+</div>
+
+<div class="music-player">
+<iframe src="https://open.spotify.com/embed/track/ID"
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+frameborder="0"></iframe>
+</div>
+
+<div class="socials">
+<a href="#">Instagram</a>
+<a href="#">TikTok</a>
+<a href="#">Twitter</a>
+</div>
+
+</div>
+</body>
+</html>
