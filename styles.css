@@ -6,7 +6,7 @@ body {
     font-weight: 500;
     display: flex;
     flex-direction: column;
-    min-height: 50vh; /* Ensure full viewport height */
+    min-height: 50vh;/* Ensure full viewport height */
     background: #fff;
     color: #111;
 }
@@ -31,67 +31,33 @@ a {
     text-decoration: none;
 }
 
-/* ===================== Navigation (Main) ===================== */
-main.underline_text nav ul li a {
-    margin: 0 2rem !important; /* force horizontal spacing */
-}
-
-.underline_text nav ul {
+/* ===================== Navigation ===================== */
+.main-nav ul,
+.footer-nav ul {
     list-style: none;
-    padding: 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 3rem;          /* spacing between buttons */
+    padding: 0;
     margin: 0 auto 72px auto;
 }
 
-.underline_text nav ul li {
-    margin: 0;
-}
-
-.underline_text nav ul li a {
+.main-nav ul li a,
+.footer-nav ul li a {
     display: inline-block;
-    text-decoration: underline;
     color: #000;
+    text-decoration: underline;
     padding: 1vw 2vw;
-    margin: 0 2rem; /* spacing between buttons */
 }
 
-.underline_text nav ul li a:hover {
+/* Hover effect */
+.main-nav ul li a:hover,
+.footer-nav ul li a:hover {
     text-decoration: none;
 }
 
-/* ===================== Footer Navigation ===================== */
-footer nav ul li a {
-    margin: 0 2rem !important;
-}
-
-footer nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0 0 10px 0;
-}
-
-footer nav ul li {
-    margin: 0;
-}
-
-footer nav ul li a {
-    display: inline-block;
-    color: #000;
-    text-decoration: none;
-    padding: 0.5vw 1vw;
-    margin: 0 2rem; /* spacing between buttons */
-}
-
-footer nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* ===================== Iframe container ===================== */
+/* ===================== Iframe Container ===================== */
 .iframe-container {
     width: 90%;
     max-width: 560px;
@@ -153,33 +119,23 @@ footer p {
         width: 100%;
     }
 
-    main.underline_text nav ul li a,
-    footer nav ul li a {
-        margin: 0 1.5rem !important;
+    .main-nav ul,
+    .footer-nav ul {
+        gap: 2rem;
     }
 }
 
 @media only screen and (max-width: 480px) {
-    .iframe-container {
-        width: 100%;
-    }
-
-    .buy-button-container,
-    .form-container {
-        width: 100%;
-        margin: 15px auto;
-    }
-
-    main.underline_text nav ul li a,
-    footer nav ul li a {
-        margin: 0 1rem !important;
+    .main-nav ul,
+    .footer-nav ul {
+        gap: 1.5rem;
     }
 }
 
 @media only screen and (max-width: 320px) {
-    main.underline_text nav ul li a,
-    footer nav ul li a {
-        margin: 0 0.8rem !important;
+    .main-nav ul,
+    .footer-nav ul {
+        gap: 1rem;
     }
 }
 
