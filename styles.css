@@ -6,7 +6,7 @@ body {
     font-weight: 500;
     display: flex;
     flex-direction: column;
-    min-height: 50vh;
+    min-height: 50vh; /* Ensure full viewport height */
     background: #fff;
     color: #111;
 }
@@ -31,33 +31,33 @@ a {
     text-decoration: none;
 }
 
-/* ===================== Navigation ===================== */
-/* Main nav inside underline_text */
+/* ===================== Navigation (Main) ===================== */
 .underline_text nav ul {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;         /* wrap buttons on small screens */
+    flex-wrap: wrap;
     margin: 0 auto 72px auto;
 }
 
 .underline_text nav ul li {
-    margin: 0 2rem;           /* spacing between buttons */
+    margin: 0;
 }
 
 .underline_text nav ul li a {
-    color: #000;
-    text-decoration: underline;
-    padding: 1vw 2vw;
     display: inline-block;
+    text-decoration: underline;
+    color: #000;
+    padding: 1vw 2vw;
+    margin: 0 2rem; /* spacing between buttons */
 }
 
 .underline_text nav ul li a:hover {
     text-decoration: none;
 }
 
-/* Footer nav */
+/* ===================== Footer Navigation ===================== */
 footer nav ul {
     list-style: none;
     display: flex;
@@ -68,23 +68,19 @@ footer nav ul {
 }
 
 footer nav ul li {
-    margin: 0 2rem;           /* spacing between buttons */
+    margin: 0;
 }
 
 footer nav ul li a {
+    display: inline-block;
     color: #000;
     text-decoration: none;
     padding: 0.5vw 1vw;
-    display: inline-block;
+    margin: 0 2rem; /* spacing between buttons */
 }
 
 footer nav ul li a:hover {
     text-decoration: underline;
-}
-
-footer p {
-    margin-top: 10px;
-    font-size: 0.9rem;
 }
 
 /* ===================== Iframe container ===================== */
@@ -125,69 +121,20 @@ iframe {
     max-height: 10vw;
 }
 
+/* ===================== Footer ===================== */
+footer {
+    margin-top: 38px;
+    text-align: center;
+    padding: 2vw 0;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
 /* ===================== Responsive Media Queries ===================== */
-@media only screen and (max-width: 48rem) { /* up to 768px */
-    .underline_text nav ul, footer nav ul {
-        gap: 3rem; /* additional spacing if needed */
-    }
-
-    .underline_text nav ul li, footer nav ul li {
-        margin: 0 1.5rem;
-    }
-
-    nav a {
-        padding: 0.5vw 1vw;
-    }
-
-    .streaming-stores-nav {
-        padding: 0.5vw 1vw;
-    }
-
-    .streaming-stores-nav img {
-        max-width: 0.5rem;
-        max-height: 0.5rem;
-    }
-}
-
-@media only screen and (max-width: 30rem) { /* up to 480px */
-    .underline_text nav ul li, footer nav ul li {
-        margin: 0 1rem;
-    }
-
-    nav a {
-        padding: 0.3vw 0.6vw;
-    }
-
-    .streaming-stores-nav {
-        padding: 0.3vw 0.6vw;
-    }
-
-    .streaming-stores-nav img {
-        max-width: 0.5rem;
-        max-height: 0.5rem;
-    }
-}
-
-@media only screen and (max-width: 20rem) { /* up to 320px */
-    .underline_text nav ul li, footer nav ul li {
-        margin: 0 0.8rem;
-    }
-
-    nav a {
-        padding: 0.1vw 0.2vw;
-    }
-
-    .streaming-stores-nav {
-        padding: 0.1vw 0.2vw;
-    }
-
-    .streaming-stores-nav img {
-        max-width: 0.5rem;
-        max-height: 0.5rem;
-    }
-}
-
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .iframe-container {
         width: 100%;
         max-width: none;
@@ -197,9 +144,14 @@ iframe {
     .form-container {
         width: 100%;
     }
+
+    .underline_text nav ul li a,
+    footer nav ul li a {
+        margin: 0 1.5rem; /* keep spacing readable on smaller screens */
+    }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
     .iframe-container {
         width: 100%;
     }
@@ -209,7 +161,20 @@ iframe {
         width: 100%;
         margin: 15px auto;
     }
+
+    .underline_text nav ul li a,
+    footer nav ul li a {
+        margin: 0 1rem;
+    }
 }
+
+@media only screen and (max-width: 320px) {
+    .underline_text nav ul li a,
+    footer nav ul li a {
+        margin: 0 0.8rem;
+    }
+}
+
 
 
 
