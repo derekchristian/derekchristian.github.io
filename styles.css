@@ -100,45 +100,6 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* ===================== Responsive Adjustments ===================== */
-@media (max-width: 768px) {
-    .iframe-container {
-        width: 90%;       /* keep at 90% instead of 100% */
-    }
-}
-
-@media (max-width: 480px) {
-    .main-nav ul,
-    .footer-nav ul {
-        gap: clamp(1rem, 5vw, 2rem);
-    }
-
-    .main-nav ul li a,
-    .footer-nav ul li a {
-        padding: clamp(0.4rem, 1vw, 0.8rem) clamp(0.8rem, 2vw, 1.5rem);
-    }
-
-    .iframe-container {
-        width: 95%;  /* a tiny increase for very small screens */
-    }
-
-    .newsletter-center {
-        width: 95%;
-        margin: 20px auto;
-    }
-}
-
-@media (max-width: 320px) {
-    .main-nav ul,
-    .footer-nav ul {
-        gap: clamp(0.8rem, 5vw, 1.5rem);
-    }
-
-    .main-nav ul li a,
-    .footer-nav ul li a {
-        padding: clamp(0.3rem, 1vw, 0.6rem) clamp(0.6rem, 2vw, 1rem);
-    }
-}
 
 
 
