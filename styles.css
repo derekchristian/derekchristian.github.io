@@ -134,7 +134,7 @@ footer nav ul {
 }
 @media (max-width: 768px) {
     .iframe-container {
-        width: 100%; /* Take full width on smaller screens */
+        width: 80%; /* Take full width on smaller screens */
         max-width: none; /* Remove max-width */
     }
 
@@ -142,7 +142,7 @@ footer nav ul {
 
 @media (max-width: 480px) {
     .iframe-container {
-        width: 100%; /* Full width for very small screens */
+        width: 70%; /* Full width for very small screens */
     }
 
 }
