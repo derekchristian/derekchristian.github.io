@@ -63,24 +63,6 @@ header img {
   border: none;
 }
 
-/* ===================== Newsletter ===================== */
-.newsletter-center {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 40px; /* optional spacing */
-  }
-
-  /* Removes scrollbars + controls width */
-  .newsletter-center iframe {
-    width: 100%;
-    max-width: 500px; 
-    height: 380px; /* enough to remove scrollbars */
-    border: 0;
-    overflow: hidden;
-    display: block;
-  }
-
 /* ===================== Footer ===================== */
 .footer-nav {
   padding: 20px 10px;
