@@ -59,8 +59,8 @@ a {
 
 /* ===================== Iframe Containers ===================== */
 .iframe-container {
-    width: 90%;
-    max-width: 560px;
+    width: 90%; /* scales with viewport */
+    max-width: 560px; /* never exceed 560px */
     aspect-ratio: 16 / 9;
     margin: 0 auto;
     position: relative;
@@ -103,8 +103,8 @@ footer p {
 /* ===================== Responsive Adjustments ===================== */
 @media (max-width: 768px) {
     .iframe-container {
-        width: 100%;
-        max-width: none;
+        width: 90%;       /* keep at 90% instead of 100% */
+        max-width: 560px; /* ensures it doesn't expand full width */
     }
 }
 
@@ -120,7 +120,8 @@ footer p {
     }
 
     .iframe-container {
-        width: 100%;
+        width: 95%;  /* a tiny increase for very small screens */
+        max-width: 560px;
     }
 
     .newsletter-center {
