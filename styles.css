@@ -80,22 +80,7 @@ header img {
   color: #555;
 }
 
-/* ===================== Section Spacing ===================== */
-section {
-  margin: 40px 10px;
-}
-
-/* ===================== Responsive ===================== */
-@media (max-width: 1024px) {
-  .iframe-container {
-    max-width: 700px;
-  }
-
-  .newsletter-center iframe {
-    max-width: 400px;
-  }
-}
-
+/* ===================== Responsive Media Queries ===================== */
 @media (max-width: 768px) {
   .main-nav ul {
     flex-direction: row;
