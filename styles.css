@@ -38,14 +38,9 @@ header img {
 }
 
 .main-nav li a {
-  font-weight: bold;
   text-transform: uppercase;
   padding: 10px 15px;
   transition: color 0.3s;
-}
-
-.main-nav li a:hover {
-  color: #555;
 }
 
 /* ===================== Iframe Container (YouTube) ===================== */
