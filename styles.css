@@ -45,7 +45,7 @@ header img {
 
 /* ===================== Iframe Container (YouTube) ===================== */
 .iframe-container {
-  position: fixed;
+  position: relative;
   width: 100%;
   max-width: 800px;
   margin: 20px auto;
