@@ -32,10 +32,17 @@ body {
     padding: 20px;
 }
 
-.profile-img {
+.header {
     max-width: 100%;
     height: auto;
     margin-bottom: 50px;
+}
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
 }
 
 h1 {
@@ -159,8 +166,10 @@ h1 {
 <body>
 <div class="container">
 
-<img class="profile-img" src="IMGS/HEADER.svg" alt="Artist Photo">
-
+<img class="header" src="IMGS/HEADER.svg" alt="Artist Photo">
+    
+<img class="profile-img" src="profile.jpg" alt="Artist Photo">
+    
 <div class="links">
 
 <a class="link" href="#">
