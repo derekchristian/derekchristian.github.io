@@ -72,16 +72,6 @@ nav a {
 }
 
 
-.form-container  {
-    margin: 20px auto 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%; /* Responsive width */
-    max-width: 560px; /* Limit maximum size */
-}
-
-
 /* Footer styles */
 footer {
     margin-top: 38px; /* Push footer to bottom */
