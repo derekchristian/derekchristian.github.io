@@ -57,7 +57,7 @@ nav a {
 }
 
 .iframe-container {
-    width: 90%; /* Use a percentage for responsive width */
+    width: 50%; /* Use a percentage for responsive width */
     max-width: 560px; /* Limit maximum size */
     aspect-ratio: 16 / 9; /* Maintain aspect ratio */
     margin: 0 auto; /* Center horizontally */
