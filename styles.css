@@ -56,8 +56,8 @@ nav a {
     text-decoration: none; /* Add no underline on hover */
 }
 iframe {
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
+    width: 50%; /* Full width of the container */
+    height: 50%; /* Full height of the container */
     display: block;
 }
 
