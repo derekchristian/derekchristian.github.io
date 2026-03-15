@@ -55,18 +55,20 @@ nav a {
 .underline_text nav ul li a:hover {
     text-decoration: none; /* Add no underline on hover */
 }
-iframe {
-    width: 50%; /* Full width of the container */
-    height: 50%; /* Full height of the container */
-    display: block;
+
+/* YouTube container */
+.iframe-container {
+    width: 100%;
+    max-width: 560px; /* Normal YouTube size */
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
 }
 
-.iframe-container {
-    width: 50%; /* Use a percentage for responsive width */
-    max-width: 250px; /* Limit maximum size */
-    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center horizontally */
-    position: relative;
+/* Video */
+.iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 
@@ -135,19 +137,7 @@ footer nav ul {
         padding: 0.1vw 0.2vw; /* Responsive padding */
     }
 }
-@media (max-width: 768px) {
-    .iframe-container {
-        width: 80%; /* Take full width on smaller screens */
-        max-width: none; /* Remove max-width */
-    }
 
-}
 
-@media (max-width: 480px) {
-    .iframe-container {
-        width: 70%; /* Full width for very small screens */
-    }
-
-}
 
 
