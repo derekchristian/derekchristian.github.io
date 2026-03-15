@@ -55,6 +55,11 @@ nav a {
 .underline_text nav ul li a:hover {
     text-decoration: none; /* Add no underline on hover */
 }
+iframe {
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    display: block;
+}
 
 .iframe-container {
     width: 50%; /* Use a percentage for responsive width */
@@ -62,12 +67,6 @@ nav a {
     aspect-ratio: 16 / 9; /* Maintain aspect ratio */
     margin: 0 auto; /* Center horizontally */
     position: relative;
-}
-
-iframe {
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
-    display: block;
 }
 
 
