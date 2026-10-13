@@ -1,172 +1,942 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
+    <!-- =====================================================================
+         DEREK CHRISTIAN — OFFICIAL WEBSITE
+         index.html
+
+         ARCHITECTURAL RULE
+         ---------------------------------------------------------------------
+         Classes, IDs, component structure, and CSS are permanent.
+
+         Future maintenance should only require:
+         - Replacing text
+         - Replacing image src values
+         - Replacing href values
+         - Replacing embed URLs
+         - Inserting widget code
+         - Toggling intentional visibility
+
+         Do NOT create temporary classes for:
+         - placeholders
+         - previews
+         - future content
+         - inactive content
+         - disabled content
+         ===================================================================== -->
+
+
+    <!-- =====================================================================
+         00 — DOCUMENT SETTINGS
+         ===================================================================== -->
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="p:domain_verify" content="a3d0c21f67552dc762779776116e8d52"/>
-    <title> Derek Christian | Official Website </title>
-    <link rel="icon" href="IMGS/FAVICON.svg" type="image/svg">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap">
-     
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official website of Derek Christian — music, shows, videos, merchandise, and more."
+    >
+
+    <title>Derek Christian | Official Website</title>
+
+
+    <!-- FAVICON -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="IMGS/favicon.svg"
+    >
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lacquer&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CLOUDFLARE TURNSTILE: Public client-side verification library. -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+
+    <!-- SITE CSS -->
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
+
 </head>
+
+
 <body>
-    <header>
-       <a href="https://derekchristian.com"> 
-           <img src="IMGS/HEADER.svg" alt="Derek Christian">
-       </a> 
+
+
+    <!-- =====================================================================
+         01 — HERO
+         ===================================================================== -->
+
+    <header class="hero">
+
+        <div class="hero-inner">
+
+
+            <!-- =============================================================
+                 DEREK CHRISTIAN BRANDING
+
+                 Permanent asset:
+                 IMGS/derek-christian-logo.svg
+                 ============================================================= -->
+
+            <img
+                src="IMGS/derek-christian-logo.svg"
+                alt="Derek Christian"
+                class="hero-logo"
+            >
+
+
+
+            <!-- =============================================================
+                 PRIMARY NAVIGATION
+
+                 CURRENT PRE-LAUNCH BEHAVIOR
+                 -------------------------------------------------------------
+                 MUSIC   → Music Release
+                 SHOP    → Shop section
+                 SHOWS   → Dedicated Shows Page
+                 VIDEO   → YouTube
+                 SIGN UP → Mailing List
+
+                 POPULATE:
+                 Replace the YouTube href with the Derek Christian channel URL.
+
+                 When a standalone shop eventually exists, change only the
+                 SHOP href. No class or CSS changes.
+                 ============================================================= -->
+
+            <nav
+                class="hero-nav"
+                aria-label="Primary navigation"
+            >
+
+                <a href="#music">
+                    Music
+                </a>
+
+                <a href="#shop">
+                    Shop
+                </a>
+
+                <a href="shows.html">
+                    Shows
+                </a>
+
+                <a
+                    href="https://youtube.com/@derekchristianmusic?sub_confirmation=1"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Video
+                </a>
+
+                <a href="#signup">
+                    Sign Up
+                </a>
+
+            </nav>
+
+        </div>
+
     </header>
-    <main class="underline_text">
-      <nav class="main-nav">
-        <ul>
-      <li> <a href="#shows">SHOWS</a></li>
-      <li> <a href="comingsoon">SHOP</a></li>
-      <li> <a href="music">MUSIC</a></li>
-      <li><a href="https://youtube.com/@derekchristianmusic?sub_confirmation=1">SUBSCRIBE</a></li>
-        </ul> 
-      </nav>
-        <div class="iframe-container">
-           <iframe width="560" height="315" src="https://www.youtube.com/embed/XFr1qwJIo3w?si=IP8Zr09yFydfEvX-" 
-               title="YouTube video player" 
-               frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+    <!-- =====================================================================
+         MAIN CONTENT
+         ===================================================================== -->
+
+    <main>
+
+
+        <!-- =================================================================
+             02 — MUSIC RELEASE
+
+             PERMANENT COMPONENT:
+             .music-release
+
+             DESKTOP:
+             Artwork | OUT NOW + DSP Links
+
+             MOBILE:
+             Artwork
+             OUT NOW
+             DSP Links
+
+             POPULATE:
+             1. Add release artwork inside .release-artwork.
+             2. Replace DSP href values.
+             3. Replace/remove status copy as appropriate.
+
+             No class or CSS changes.
+             ================================================================= -->
+
+        <section
+            class="music-release"
+            id="music"
+        >
+
+            <div class="music-release-inner">
+
+                <h2 class="section-heading">
+                    Music Release
+                </h2>
+
+
+                <div class="music-release-layout">
+
+
+                    <!-- =====================================================
+                         RELEASE ARTWORK
+
+                         Permanent container:
+                         .release-artwork
+
+                         CURRENT:
+                         COMING SOON
+
+                         WHEN ARTWORK EXISTS:
+                         Replace the contents of this container with:
+
+                         <img
+                             src="IMGS/releases/release-artwork.jpg"
+                             alt="Derek Christian — Release Title"
+                         >
+
+                         Do not change .release-artwork.
+                         ===================================================== -->
+
+                    <div class="release-artwork-column">
+
+                        <div class="release-artwork">
+
+                            <span class="coming-soon">
+                                Coming Soon
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =====================================================
+                         RELEASE INFORMATION
+                         ===================================================== -->
+
+                    <div class="release-links">
+
+                        <h3 class="out-now">
+                            Out Now
+                        </h3>
+
+
+                        <div class="dsp-links">
+
+
+                            <!-- APPLE MUSIC -->
+
+                            <a
+                                href="#"
+                                class="dsp-button"
+                                aria-label="Listen on Apple Music"
+                            >
+                                <img
+                                    src="IMGS/dsp/apple-music.svg"
+                                    alt="Apple Music"
+                                    class="dsp-logo"
+                                >
+                            </a>
+
+
+                            <!-- SPOTIFY -->
+
+                            <a
+                                href="#"
+                                class="dsp-button"
+                                aria-label="Listen on Spotify"
+                            >
+                                <img
+                                    src="IMGS/dsp/spotify.png"
+                                    alt="Spotify"
+                                    class="dsp-logo"
+                                >
+                            </a>
+
+
+                            <!-- AMAZON MUSIC -->
+
+                            <a
+                                href="#"
+                                class="dsp-button"
+                                aria-label="Listen on Amazon Music"
+                            >
+                                <img
+                                    src="IMGS/dsp/amazon-music.svg"
+                                    alt="Amazon Music"
+                                    class="dsp-logo"
+                                >
+                            </a>
+
+
+                            <!-- YOUTUBE MUSIC -->
+
+                            <a
+                                href="#"
+                                class="dsp-button"
+                                aria-label="Listen on YouTube Music"
+                            >
+                                <img
+                                    src="IMGS/dsp/youtube-music.png"
+                                    alt="YouTube Music"
+                                    class="dsp-logo"
+                                >
+                            </a>
+
+
+                            <!-- BANDCAMP -->
+
+                            <a
+                                href="#"
+                                class="dsp-button"
+                                aria-label="Listen on Bandcamp"
+                            >
+                                <img
+                                    src="IMGS/dsp/bandcamp.png"
+                                    alt="Bandcamp"
+                                    class="dsp-logo"
+                                >
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
-     <section id="shows">   
-    <script charset="utf-8" src="https://widgetv3.bandsintown.com/main.min.js"></script>
-  <a class="bit-widget-initializer"
-    
-	data-artist-name="id_15623307"
-	
-	data-events-to-display=""
-	data-background-color="rgba(255,255,255,1)"
-	data-separator-color="rgba(221,221,221,1)"
-	data-text-color="rgba(0,0,0,1)"
-	data-font="Tahoma"
-	data-auto-style="true"
-	
-	data-button-label-capitalization="capitalize"
-	data-header-capitalization="uppercase"
-	data-location-capitalization="capitalize"
-	data-venue-capitalization="capitalize"
-	data-display-local-dates="true"
-	data-local-dates-position="tab"
-	data-display-past-dates="true"
-	data-display-details="false"
-	data-display-lineup="false"
-	data-display-start-time="false"
-	data-social-share-icon="false"
-	data-display-limit="all"
-	
-	data-date-format="MMM. D, YYYY"
-	data-date-orientation="horizontal"
-	data-date-border-color="#4A4A4A"
-	data-date-border-width="1px"
-	data-date-capitalization="capitalize"
-	data-date-border-radius="10px"
-	
-	data-event-ticket-cta-size="medium"
-	data-event-custom-ticket-text=""
-	data-event-ticket-text="TICKETS"
-	data-event-ticket-icon="false"
-	data-event-ticket-cta-text-color="rgba(0,0,0,1)"
-	data-event-ticket-cta-bg-color="rgba(255,255,255,1)"
-	data-event-ticket-cta-border-color="rgba(0,0,0,1)"
-	data-event-ticket-cta-border-width="1px"
-	data-event-ticket-cta-border-radius="2px"
-	
-	data-sold-out-button-text-color="rgba(0,0,0,1)"
-	data-sold-out-button-background-color="rgba(255,255,255,1)"
-	data-sold-out-button-border-color="rgba(0,0,0,1)"
-	data-sold-out-button-clickable="true"
-	
-	data-event-rsvp-position="left"
-	data-event-rsvp-cta-size="medium"
-	data-event-rsvp-only-show-icon="false"
-	data-event-rsvp-text="RSVP"
-	data-event-rsvp-icon="false"
-	data-event-rsvp-cta-text-color="rgba(0,0,0,1)"
-	data-event-rsvp-cta-bg-color="rgba(255,255,255,1)"
-	data-event-rsvp-cta-border-color="rgba(0,0,0,1)"
-	data-event-rsvp-cta-border-width="1px"
-	data-event-rsvp-cta-border-radius="2px"
-	
-	data-follow-section-position="top"
-	data-follow-section-alignment="center"
-	data-follow-section-header-text="Get updates on new shows, new music, and more"
-	data-follow-section-cta-size="medium"
-	data-follow-section-cta-text="FOLLOW"
-	data-follow-section-cta-icon="false"
-	data-follow-section-cta-text-color="rgba(0,0,0,1)"
-	data-follow-section-cta-bg-color="rgba(255,255,255,1)"
-	data-follow-section-cta-border-color="rgba(0,0,0,1)"
-	data-follow-section-cta-border-width="1px"
-	data-follow-section-cta-border-radius="2px"
-	
-	data-play-my-city-position="bottom"
-	data-play-my-city-alignment="center"
-	data-play-my-city-header-text="Don’t see a show near you?"
-	data-play-my-city-cta-size="medium"
-	data-play-my-city-cta-text="REQUEST A SHOW"
-	data-play-my-city-cta-icon="false"
-	data-play-my-city-cta-text-color="rgba(0,0,0,1)"
-	data-play-my-city-cta-bg-color="rgba(255,255,255,1)"
-	data-play-my-city-cta-border-color="rgba(0,0,0,1)"
-	data-play-my-city-cta-border-width="1px"
-	data-play-my-city-cta-border-radius="2px"
-	
-	data-optin-font=""
-	data-optin-text-color=""
-	data-optin-bg-color=""
-	data-optin-cta-text-color=""
-	data-optin-cta-bg-color=""
-	data-optin-cta-border-width=""
-	data-optin-cta-border-radius=""
-	data-optin-cta-border-color=""
-	
-	data-language="en"
-	data-layout-breakpoint="900"
-	data-app-id="1fd25e458bc80e108565e73254669f35"
-	data-affil-code=""
-	data-bit-logo-position="bottomRight"
-	data-bit-logo-color="rgba(255,255,255,1)"
-	
-    ></a>
-</section>		
 
-  <style>
-  /* Centers the widget on the page */
-  .newsletter-center {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 40px; /* optional spacing */
-  }
+        </section>
 
-  /* Removes scrollbars + controls width */
-  .newsletter-center iframe {
-    width: 100%;
-    max-width: 500px; 
-    height: 380px; /* enough to remove scrollbars */
-    border: 0;
-    overflow: hidden;
-    display: block;
-  }
-</style>
 
-<div class="newsletter-center">
-  <iframe src="https://bandsintown.com/artist/15623307/email_signup_form?headerTextColor=rgba(0,0,0,1)&backgroundColor=rgba(255,255,255,1)&ctaBackgroundColor=rgba(255,255,255,1)&title=MAILING LIST&headerTextStyle=normal&headerText=Sign up to get the latest updates&font=Tahoma&ctaIcon=show&ctaBorderRadius=4px&ctaBorderWidth=1px&ctaBorderColor=rgba(0,0,0,1)&ctaFontColor=rgba(0,0,0,1)&alignment=center&emailInputField=show&ctaLabel=Subscribe&layout=narrow&locale=en" title="newsletter-widget"></iframe>
-</div>
 
- <footer class="footer-nav">
-        <nav>
-        <ul>
-            <li><a href="about">ABOUT</a></li>
-            <li> <a href="#">CONTACT</a></li>
-            <li><a href="policy">POLICY</a></li>
-        </ul>
-        </nav>
-  <p>&copy; 2026 Derek Christian. All rights reserved.</p>
-</footer>
+        <!-- =================================================================
+             03 — SHOP
+
+             PERMANENT COMPONENT:
+             .shop
+
+             The Shop exists as part of the permanent homepage architecture
+             even before merchandise is available.
+
+             CURRENT PURPOSE:
+             Communicate that merchandise is coming and direct interested
+             visitors toward the mailing list.
+
+             FUTURE:
+             Populate the same components with products and change destination
+             href values.
+
+             No class or CSS changes.
+             ================================================================= -->
+
+        <section
+            class="shop"
+            id="shop"
+        >
+
+            <div class="shop-inner">
+
+                <h2 class="section-heading">
+                    Shop
+                </h2>
+
+
+                <div class="shop-products">
+
+
+                    <!-- =====================================================
+                         PRODUCT 1
+
+                         Permanent component:
+                         .shop-product
+                         .shop-product-image
+
+                         POPULATE:
+                         Replace the contents of .shop-product-image with the
+                         actual product image.
+
+                         Product names/details/links can be added inside this
+                         existing .shop-product component.
+                         ===================================================== -->
+
+                    <article class="shop-product">
+
+                        <div class="shop-product-image">
+
+                            <span class="coming-soon">
+                                Coming Soon
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PRODUCT 2 -->
+
+                    <article class="shop-product">
+
+                        <div class="shop-product-image">
+
+                            <span class="coming-soon">
+                                Coming Soon
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PRODUCT 3 -->
+
+                    <article class="shop-product">
+
+                        <div class="shop-product-image">
+
+                            <span class="coming-soon">
+                                Coming Soon
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+
+                <!-- =========================================================
+                     SHOP ACTION
+
+                     CURRENT:
+                     Sends visitor to mailing-list signup.
+
+                     WHEN SHOP LAUNCHES:
+                     Change only:
+                         href="#signup"
+                     to:
+                         href="shop.html"
+
+                     Class remains .shop-button permanently.
+                     ========================================================= -->
+
+                <div class="shop-action">
+
+                    <a
+                        href="#signup"
+                        class="shop-button"
+                    >
+                        Shop
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+<!-- =================================================================
+             04 — FEATURED VIDEO
+
+             PERMANENT COMPONENT:
+             .featured-video
+             .featured-video-inner
+             .video-wrapper
+
+             Maximum player:
+             640 × 360
+
+             CURRENT:
+             COMING SOON
+
+             POPULATE:
+             Replace the contents of .video-wrapper with the YouTube iframe.
+
+             Example:
+
+             <iframe
+                 src="YOUTUBE-EMBED-URL"
+                 title="Derek Christian — Video Title"
+                 allow="accelerometer; autoplay; clipboard-write;
+                        encrypted-media; gyroscope; picture-in-picture;
+                        web-share"
+                 allowfullscreen
+             ></iframe>
+
+             Do not change .video-wrapper or CSS.
+             ================================================================= -->
+
+        <section
+            class="featured-video"
+            id="featured-video"
+        >
+
+            <div class="featured-video-inner">
+
+                <h2 class="section-heading">
+                    Featured Video
+                </h2>
+
+
+                <div class="video-wrapper">
+
+                    <span class="video-play-icon" aria-hidden="true"></span>
+
+                    <span class="coming-soon">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================================
+             05 — AFFILIATE MARKETING
+
+             OPTIONAL PERMANENT MODULE
+
+             The component architecture is final.
+
+             It is intentionally hidden until an affiliate campaign exists.
+
+             TO ACTIVATE:
+             1. Remove only the native "hidden" attribute.
+             2. Replace href.
+             3. Populate .affiliate-image with campaign artwork.
+
+             No classes or CSS change.
+
+             Maximum graphic:
+             641 × 361
+             ================================================================= -->
+
+        <section
+            class="affiliate-marketing"
+            id="affiliate"
+            hidden
+        >
+
+            <div class="affiliate-inner">
+
+                <h2 class="section-heading">
+                    Affiliate Marketing
+                </h2>
+
+
+                <!-- =========================================================
+                     AFFILIATE CAMPAIGN
+
+                     POPULATE:
+                     Replace href with affiliate destination.
+
+                     Replace contents of .affiliate-image with:
+
+                     <img
+                         src="IMGS/affiliate/campaign-image.jpg"
+                         alt="Campaign description"
+                     >
+                     ========================================================= -->
+
+                <a
+                    href="#"
+                    class="affiliate-link"
+                >
+
+                    <div class="affiliate-image">
+
+                        <span class="coming-soon">
+                            Coming Soon
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================================
+             06 — SIGN UP
+
+             PERMANENT COMPONENT:
+             .signup
+             .signup-inner
+             .signup-widget
+             .newsletter-form
+
+             Email subscriber form; submission integration will be added
+             when the form-processing backend is configured.
+             ================================================================= -->
+
+        <section
+            class="signup"
+            id="signup"
+        >
+
+            <div class="signup-inner">
+
+                <h2 class="section-heading">
+                    Newsletter Sign Up
+                </h2>
+
+
+                <p class="signup-copy">
+                    Stay up to date with music, shows, merchandise, and announcements.
+                </p>
+
+
+                <div class="signup-widget">
+
+                    <!-- =====================================================
+                         NEWSLETTER SUBMISSION
+                         -----------------------------------------------------
+                         JavaScript handles submission without reloading the
+                         page. The existing form class and email field remain
+                         unchanged so established site styling is preserved.
+
+                         The visitor must explicitly agree to receive email.
+                         Turnstile checks the submission before the Worker
+                         forwards it to Google Apps Script.
+                         ===================================================== -->
+
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="EMAIL ADDRESS"
+                            aria-label="Email Address"
+                            autocomplete="email"
+                            required
+                        >
+
+                        <button type="submit">SUBMIT</button>
+
+                        <!-- Explicit consent; never preselected. -->
+                        <label style="display:block; flex-basis:100%; width:100%; font:inherit;">
+                            <input type="checkbox" name="consent" required>
+                            I agree to receive email updates about music, shows,
+                            merchandise, and announcements. I can unsubscribe at any time.
+                        </label>
+
+                        <!-- Public site key: safe to include in source code. -->
+                        <div
+                            class="cf-turnstile"
+                            data-sitekey="0x4AAAAAAFWBRqjTIhs6YuDQ"
+                            style="flex-basis:100%; width:100%;"
+                        ></div>
+
+                        <!-- Accessible feedback for success and failure. -->
+                        <p
+                            id="newsletter-status"
+                            role="status"
+                            aria-live="polite"
+                            style="flex-basis:100%; width:100%; margin:0;"
+                        ></p>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
     </main>
+
+
+
+    <!-- =====================================================================
+         07 — FOOTER
+
+         Permanent footer architecture.
+
+         POPULATE:
+         Replace social href values with production profile URLs.
+
+         Shop bag currently routes to #shop.
+         When shop.html launches, change only that href.
+         ===================================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+
+            <!-- =============================================================
+                 SOCIAL / DESTINATION ICONS
+                 ============================================================= -->
+
+            <nav
+                class="footer-socials"
+                aria-label="Social media and shop"
+            >
+
+
+                <!-- FACEBOOK -->
+
+                <a
+                    href="https://facebook.com/officialderekchristianmusic"
+                    aria-label="Derek Christian on Facebook"
+                >
+                    <img
+                        src="IMGS/icons/facebook.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+
+                <!-- INSTAGRAM -->
+
+                <a
+                    href="https://instagram.com/derekchristianmusic"
+                    aria-label="Derek Christian on Instagram"
+                >
+                    <img
+                        src="IMGS/icons/instagram.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+
+                <!-- TIKTOK -->
+
+                <a
+                    href="https://tiktok.com/@derekchristianmusic"
+                    aria-label="Derek Christian on TikTok"
+                >
+                    <img
+                        src="IMGS/icons/tiktok.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+
+                <!-- YOUTUBE -->
+
+                <a
+                    href="https://youtube.com/@derekchristianmusic?sub_confirmation=1"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Derek Christian on YouTube"
+                >
+                    <img
+                        src="IMGS/icons/youtube.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+
+                <!-- X -->
+
+                <a
+                    href="https://x.com/OfficialDerekCM"
+                    aria-label="Derek Christian on X"
+                >
+                    <img
+                        src="IMGS/icons/twitter-x.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+
+                <!-- SHOP -->
+
+                <a
+                    href="#shop"
+                    aria-label="Derek Christian shop"
+                >
+                    <img
+                        src="IMGS/icons/bag.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+            </nav>
+
+
+
+            <!-- =============================================================
+                 FOOTER LINKS
+                 ============================================================= -->
+
+            <nav
+                class="footer-links"
+                aria-label="Footer navigation"
+            >
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="booking.html">
+                    Booking
+                </a>
+
+                <a href="policy.html">
+                    Policy
+                </a>
+
+            </nav>
+
+
+
+            <!-- COPYRIGHT -->
+
+            <p class="copyright">
+                &copy; 2026 Derek Christian. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================================
+         NEWSLETTER FORM JAVASCRIPT
+         ---------------------------------------------------------------------
+         This code runs in the visitor's browser. It never stores or exposes
+         the Google Apps Script URL, Turnstile secret, or FORM_API_SECRET.
+
+         Submission sequence:
+         1. Confirm the email and explicit consent.
+         2. Obtain the one-time Turnstile verification token.
+         3. Send JSON to the deployed Cloudflare Worker.
+         4. Show the result without leaving the homepage.
+         ===================================================================== -->
+    <script>
+        (() => {
+            "use strict";
+
+            // Public Worker endpoint. Sensitive verification happens there.
+            const WORKER_URL = "https://derek-christian-website-forms.screamingnemo69.workers.dev";
+
+            const form = document.getElementById("newsletter-form");
+            const status = document.getElementById("newsletter-status");
+            const submitButton = form.querySelector('button[type="submit"]');
+            const emailInput = form.elements.email;
+            const consentInput = form.elements.consent;
+
+            // Restore the form after every attempt, including network errors.
+            function setSubmitting(isSubmitting) {
+                submitButton.disabled = isSubmitting;
+                submitButton.textContent = isSubmitting ? "SUBMITTING…" : "SUBMIT";
+            }
+
+            // A Turnstile token is single-use; reset after any submission.
+            function resetTurnstile() {
+                if (window.turnstile && typeof window.turnstile.reset === "function") {
+                    window.turnstile.reset();
+                }
+            }
+
+            // Prevent the browser's normal form navigation and submit safely.
+            form.addEventListener("submit", async (event) => {
+                event.preventDefault();
+                status.textContent = "";
+
+                // Native browser validation enforces email and consent.
+                if (!form.reportValidity()) return;
+
+                const turnstileToken = window.turnstile?.getResponse?.();
+                if (!turnstileToken) {
+                    status.textContent = "Please complete the verification before submitting.";
+                    return;
+                }
+
+                setSubmitting(true);
+
+                try {
+                    const response = await fetch(WORKER_URL, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            form: "newsletter",
+                            email: emailInput.value.trim(),
+                            consent: consentInput.checked,
+                            turnstileToken: turnstileToken
+                        })
+                    });
+
+                    // Worker replies with JSON; a non-JSON response is a failure.
+                    const result = await response.json();
+                    if (!response.ok || result.status !== "success") {
+                        throw new Error("Newsletter submission was not accepted.");
+                    }
+
+                    // Clear personal input only after confirmed success.
+                    form.reset();
+                    status.textContent = "Thank you for signing up!";
+                } catch (error) {
+                    console.error("Newsletter submission failed:", error);
+                    status.textContent = "We couldn't complete your signup. Please try again.";
+                } finally {
+                    resetTurnstile();
+                    setSubmitting(false);
+                }
+            });
+        })();
+    </script>
+
 </body>
+
 </html>
