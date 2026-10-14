@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================================
+         DEREK CHRISTIAN — CONTACT
+         contact.html
+
+         SECONDARY PAGE ARCHITECTURE
+         ---------------------------------------------------------------------
+         8px BLACK TOP RULE
+         PAGE NAVIGATION
+         1px GRAY BOTTOM RULE
+         PAGE CONTENT
+
+         ARCHITECTURAL RULE
+         ---------------------------------------------------------------------
+         Classes, IDs, component structure, and CSS are permanent.
+
+         Future maintenance should only require:
+         - Adding / replacing Mailchimp embed code
+         - Replacing text
+         - Replacing href values
+
+         Adding or changing content must NOT require renaming classes,
+         restructuring components, or modifying the production architecture.
+         ===================================================================== -->
+
+
+    <!-- =====================================================================
+         00 — DOCUMENT SETTINGS
+         ===================================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Contact Derek Christian for general, press, media, radio, and broadcast inquiries."
+    >
+
+    <title>Contact | Derek Christian</title>
+
+
+    <!-- FAVICON -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="IMGS/favicon.svg"
+    >
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lacquer&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================================
+         INLINE PAGE CSS
+         ===================================================================== -->
+
+    <style>
+
+        /* ==================================================================
+           00 — GLOBAL CONFIGURATION
+           ================================================================== */
+
+        :root {
+
+            /* COLORS */
+
+            --color-black: #000000;
+            --color-white: #ffffff;
+            --color-muted-text: #666666;
+            --color-rule: #d8d8d8;
+
+
+            /* SITE WIDTHS */
+
+            --page-width: 1180px;
+            --content-width: 1000px;
+            --text-width: 720px;
+            --form-width: 640px;
+
+
+            /* VERTICAL SPACING */
+
+            --section-spacing: 90px;
+
+
+            /* SITE HEADER */
+
+            --site-header-top-rule: 8px;
+
+        }
+
+
+
+        /* ==================================================================
+           01 — RESET & BASE STYLES
+           ================================================================== */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            margin: 0;
+
+            background: var(--color-white);
+
+            color: var(--color-black);
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            font-size: 16px;
+
+            line-height: 1.5;
+
+            overflow-x: hidden;
+        }
+
+
+        img {
+            display: block;
+
+            max-width: 100%;
+
+            height: auto;
+        }
+
+
+        a {
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+        input,
+        select,
+        textarea,
+        button {
+            font: inherit;
+        }
+
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+
+
+        /* ==================================================================
+           02 — SITE HEADER
+
+           SECONDARY PAGE STANDARD
+           ------------------------------------------------------------------
+           8px BLACK TOP RULE
+           PAGE NAVIGATION
+           1px GRAY BOTTOM RULE
+           ================================================================== */
+
+        .site-header {
+            width: 100%;
+
+            background: var(--color-white);
+
+            border-top:
+                var(--site-header-top-rule)
+                solid
+                var(--color-black);
+
+            border-bottom:
+                1px
+                solid
+                var(--color-rule);
+        }
+
+
+        .site-nav {
+            width:
+                min(
+                    var(--page-width),
+                    calc(100% - 3rem)
+                );
+
+            min-height: 64px;
+
+            margin-inline: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .site-nav-list {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin: 0;
+
+            padding: 0;
+
+            list-style: none;
+        }
+
+
+        .site-nav-link {
+            display: block;
+
+            padding:
+                1.35rem
+                1.5rem;
+
+            color: var(--color-black);
+
+            font-size: 0.72rem;
+
+            font-weight: 600;
+
+            letter-spacing: 0.16em;
+
+            line-height: 1;
+
+            text-transform: uppercase;
+
+            opacity: 0.7;
+
+            transition:
+                opacity 180ms ease,
+                transform 180ms ease;
+        }
+
+
+        .site-nav-link:hover,
+        .site-nav-link:focus-visible {
+            opacity: 1;
+
+            transform: translateY(-1px);
+        }
+
+
+
+        /* ==================================================================
+           03 — CONTACT
+           ================================================================== */
+
+        .contact-section {
+            width: 100%;
+
+            padding:
+                var(--section-spacing)
+                1.5rem;
+
+            background: var(--color-white);
+        }
+
+
+        .contact-section-inner {
+            width:
+                min(
+                    var(--content-width),
+                    100%
+                );
+
+            margin-inline: auto;
+        }
+
+
+        .section-heading {
+            margin:
+                0
+                0
+                2.5rem;
+
+            color: var(--color-black);
+
+            font-family:
+                "Lacquer",
+                sans-serif;
+
+            font-size:
+                clamp(
+                    2.25rem,
+                    4.5vw,
+                    3.75rem
+                );
+
+            font-weight: 400;
+
+            line-height: 1;
+
+            letter-spacing: 0;
+
+            text-align: center;
+
+            text-transform: uppercase;
+        }
+
+
+        .contact-intro {
+            width:
+                min(
+                    var(--text-width),
+                    100%
+                );
+
+            margin:
+                0
+                auto
+                3.5rem;
+
+            text-align: center;
+
+            line-height: 1.75;
+        }
+
+
+
+/* CONTACT FORM — approved styling */
+.contact-section { background: #fff; padding: 40px 20px; font-family: 'Inter', sans-serif; }
+.contact-form { width: 100%; max-width: 750px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+.contact-fields-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; }
+.contact-field { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.contact-field label { color: #000; font-size: 14px; font-weight: 700; letter-spacing: 0.5px; }
+.contact-field input, .contact-field select, .contact-field textarea { width: 100%; box-sizing: border-box; border: none; border-bottom: 1px solid #000; border-radius: 0; background: transparent; color: #000; padding: 12px 2px; font: 400 16px 'Inter', sans-serif; outline: none; min-height: 44px; }
+.contact-field input::placeholder, .contact-field textarea::placeholder { color: #555; opacity: 1; }
+.contact-field select { cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 4px center; background-size: 16px; padding-right: 28px; }
+.contact-field textarea { resize: vertical; min-height: 150px; line-height: 1.5; }
+.contact-field input:focus, .contact-field select:focus, .contact-field textarea:focus { border-bottom: 2px solid #000; }
+.contact-submit { align-self: flex-start; background: #000; color: #fff; border: 1px solid #000; border-radius: 0; padding: 12px 35px; min-height: 44px; font: 700 14px 'Inter', sans-serif; cursor: pointer; transition: background 0.25s ease, color 0.25s ease; }
+.contact-submit:hover, .contact-submit:focus-visible { background: #fff; color: #000; }
+@media (max-width: 1023px) { .contact-section { padding: 35px 20px; } .contact-form { max-width: 650px; } }
+@media (max-width: 767px) { .contact-section { padding: 30px 20px; } .contact-form { gap: 24px; } .contact-fields-grid { grid-template-columns: 1fr; gap: 24px; } .contact-field textarea { min-height: 130px; } .contact-submit { width: 100%; align-self: stretch; } }
+@media (max-width: 375px) { .contact-section { padding: 25px 15px; } .contact-field label { font-size: 13px; } .contact-form, .contact-fields-grid { gap: 20px; } }
+@media (prefers-reduced-motion: reduce) { .contact-submit { transition: none; } }
+
+
+        /* ==================================================================
+           05 — B2C FOOTER
+           ================================================================== */
+
+        .site-footer {
+            width: 100%;
+
+            padding:
+                2.5rem
+                1.5rem
+                3rem;
+
+            background: var(--color-white);
+
+            text-align: center;
+        }
+
+
+        .footer-inner {
+            width:
+                min(
+                    var(--content-width),
+                    100%
+                );
+
+            margin-inline: auto;
+        }
+
+
+
+        /* ------------------------------------------------------------------
+           05.1 — SOCIAL / DESTINATION ICONS
+           ------------------------------------------------------------------ */
+
+        .footer-socials {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 1.25rem;
+
+            margin-bottom: 2rem;
+        }
+
+
+        .footer-socials a {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            opacity: 0.65;
+
+            transition:
+                opacity 180ms ease,
+                transform 180ms ease;
+        }
+
+
+        .footer-socials a:hover,
+        .footer-socials a:focus-visible {
+            opacity: 1;
+
+            transform: translateY(-1px);
+        }
+
+
+        .footer-social-icon {
+            display: block;
+
+            width: 20px;
+
+            height: 20px;
+
+            object-fit: contain;
+        }
+
+
+
+        /* ------------------------------------------------------------------
+           05.2 — FOOTER LINKS
+           ------------------------------------------------------------------ */
+
+        .footer-links {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap:
+                0.75rem
+                1.75rem;
+        }
+
+
+        .footer-links a {
+            font-size: 0.68rem;
+
+            font-weight: 600;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+
+            opacity: 0.6;
+
+            transition:
+                opacity
+                180ms
+                ease;
+        }
+
+
+        .footer-links a:hover,
+        .footer-links a:focus-visible {
+            opacity: 1;
+        }
+
+
+
+        /* ------------------------------------------------------------------
+           05.3 — COPYRIGHT
+           ------------------------------------------------------------------ */
+
+        .copyright {
+            margin:
+                1.5rem
+                0
+                0;
+
+            font-size: 0.65rem;
+
+            opacity: 0.45;
+        }
+
+
+
+        /* ==================================================================
+           06 — TABLET / MOBILE
+           768px AND BELOW
+           ================================================================== */
+
+        @media (max-width: 768px) {
+
+
+            /* --------------------------------------------------------------
+               06.1 — GLOBAL
+               -------------------------------------------------------------- */
+
+            :root {
+                --section-spacing: 70px;
+            }
+
+
+
+            /* --------------------------------------------------------------
+               06.2 — SITE HEADER
+               -------------------------------------------------------------- */
+
+            .site-nav {
+                width:
+                    min(
+                        var(--page-width),
+                        calc(100% - 2rem)
+                    );
+
+                min-height: 58px;
+            }
+
+
+            .site-nav-link {
+                padding:
+                    1.2rem
+                    1rem;
+
+                font-size: 0.68rem;
+            }
+
+        }
+
+
+
+        /* ==================================================================
+           07 — SMALL MOBILE
+           480px AND BELOW
+           ================================================================== */
+
+        @media (max-width: 480px) {
+
+
+            /* --------------------------------------------------------------
+               07.1 — GLOBAL
+               -------------------------------------------------------------- */
+
+            :root {
+                --section-spacing: 60px;
+            }
+
+
+            body {
+                font-size: 15px;
+            }
+
+
+
+            /* --------------------------------------------------------------
+               07.2 — SITE HEADER
+               -------------------------------------------------------------- */
+
+            .site-nav {
+                width: 100%;
+
+                min-height: auto;
+
+                padding:
+                    0.35rem
+                    0.5rem;
+            }
+
+
+            .site-nav-list {
+                width: 100%;
+            }
+
+
+            .site-nav-link {
+                padding:
+                    0.9rem
+                    0.65rem;
+
+                font-size: 0.62rem;
+
+                letter-spacing: 0.09em;
+            }
+
+
+
+            /* --------------------------------------------------------------
+               07.3 — CONTACT
+               -------------------------------------------------------------- */
+
+            .contact-section {
+                padding-left: 1rem;
+
+                padding-right: 1rem;
+            }
+
+
+            .contact-intro {
+                margin-bottom: 3rem;
+            }
+
+
+            .section-heading {
+                font-size:
+                    clamp(
+                        1.9rem,
+                        9vw,
+                        2.75rem
+                    );
+            }
+
+
+            .form-submit button,
+            .form-submit input[type="submit"],
+            .button {
+                width: 100%;
+            }
+
+
+
+            /* --------------------------------------------------------------
+               07.4 — FOOTER
+               -------------------------------------------------------------- */
+
+            .site-footer {
+                padding:
+                    2.25rem
+                    1rem
+                    2.5rem;
+            }
+
+
+            .footer-socials {
+                gap: 1.1rem;
+
+                margin-bottom: 1.75rem;
+            }
+
+
+            .footer-social-icon {
+                width: 19px;
+
+                height: 19px;
+            }
+
+        }
+
+    </style>
+
+    <!-- Cloudflare Turnstile: uses the existing invisible widget. -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================================
+         01 — SITE HEADER
+
+         SECONDARY PAGE STANDARD
+         ---------------------------------------------------------------------
+         8px BLACK TOP RULE
+         PRIMARY NAVIGATION
+         1px GRAY BOTTOM RULE
+
+         No photographic hero.
+         No Derek Christian branding hero.
+         ===================================================================== -->
+
+    <header class="site-header">
+
+        <nav
+            class="site-nav"
+            aria-label="Primary navigation"
+        >
+
+            <ul class="site-nav-list">
+
+                <li>
+                    <a
+                        class="site-nav-link"
+                        href="index.html#music"
+                    >
+                        Music
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="site-nav-link"
+                        href="index.html#shop"
+                    >
+                        Shop
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="site-nav-link"
+                        href="shows.html"
+                    >
+                        Shows
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="site-nav-link"
+                        href="https://youtube.com/@derekchristianmusic?sub_confirmation=1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Video
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="site-nav-link"
+                        href="index.html#signup"
+                    >
+                        Sign Up
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================================
+         MAIN CONTENT
+         ===================================================================== -->
+
+    <main>
+
+
+        <!-- =================================================================
+             02 — CONTACT
+             ================================================================= -->
+
+        <section
+            class="contact-section"
+            id="contact"
+        >
+
+            <div class="contact-section-inner">
+
+                <h1 class="section-heading">
+                    Contact
+                </h1>
+
+
+                <p class="contact-intro">
+                    For general, press, media, radio, or broadcast
+                    inquiries, please use the contact form below.
+                </p>
+
+
+
+                <!-- CONTACT FORM -->
+                <form class="contact-form" id="contact-form">
+                  <div class="contact-fields-grid">
+                    <div class="contact-field"><label for="contact-name">FULL NAME *</label><input type="text" id="contact-name" name="name" autocomplete="name" maxlength="100" required></div>
+                    <div class="contact-field"><label for="contact-email">EMAIL ADDRESS *</label><input type="email" id="contact-email" name="email" autocomplete="email" maxlength="254" required></div>
+                    <div class="contact-field"><label for="contact-type">INQUIRY TYPE *</label><select id="contact-type" name="inquiry_type" required><option value="" disabled selected>SELECT INQUIRY TYPE</option><option value="general">General</option><option value="press">Press</option><option value="media">Media</option><option value="radio">Radio</option><option value="broadcast">Broadcast</option></select></div>
+                    <div class="contact-field"><label for="contact-organization">ORGANIZATION / OUTLET</label><input type="text" id="contact-organization" name="organization" maxlength="150"></div>
+                  </div>
+                  <div class="contact-field"><label for="contact-subject">SUBJECT *</label><input type="text" id="contact-subject" name="subject" maxlength="150" required></div>
+                  <div class="contact-field"><label for="contact-message">MESSAGE *</label><textarea id="contact-message" name="message" rows="6" maxlength="5000" required></textarea></div>
+                                      <!-- Reuse the existing Turnstile site key configured as Invisible in Cloudflare. -->
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAAFWBRqjTIhs6YuDQ"></div>
+                    <p id="contact-status" role="status" aria-live="polite" style="margin:0;"></p>
+<button type="submit" class="contact-submit">SUBMIT</button>
+                </form>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================================
+         03 — B2C FOOTER
+
+         POPULATE:
+         Replace social href values with production profile URLs.
+
+         Shop currently returns to the homepage Shop section.
+         When shop.html launches, change only that href.
+         ===================================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+
+            <!-- =============================================================
+                 SOCIAL / DESTINATION ICONS
+                 ============================================================= -->
+
+            <nav
+                class="footer-socials"
+                aria-label="Social media and shop"
+            >
+
+
+                <!-- FACEBOOK -->
+
+                <a
+                    href="https://facebook.com/officialderekchristianmusic"
+                    aria-label="Derek Christian on Facebook"
+                >
+                    <img
+                        src="IMGS/icons/facebook.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+
+                <!-- INSTAGRAM -->
+
+                <a
+                    href="https://instagram.com/derekchristianmusic"
+                    aria-label="Derek Christian on Instagram"
+                >
+                    <img
+                        src="IMGS/icons/instagram.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+
+                <!-- TIKTOK -->
+
+                <a
+                    href="https://tiktok.com/@derekchristianmusic"
+                    aria-label="Derek Christian on TikTok"
+                >
+                    <img
+                        src="IMGS/icons/tiktok.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+
+                <!-- YOUTUBE -->
+
+                <a
+                    href="https://youtube.com/@derekchristianmusic?sub_confirmation=1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Derek Christian on YouTube"
+                >
+                    <img
+                        src="IMGS/icons/youtube.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+
+                <!-- X -->
+
+                <a
+                    href="https://x.com/OfficialDerekCM"
+                    aria-label="Derek Christian on X"
+                >
+                    <img
+                        src="IMGS/icons/twitter-x.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+
+                <!-- SHOP -->
+
+                <a
+                    href="index.html#shop"
+                    aria-label="Derek Christian shop"
+                >
+                    <img
+                        src="IMGS/icons/bag.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+            </nav>
+
+
+
+            <!-- =============================================================
+                 FOOTER LINKS
+                 ============================================================= -->
+
+            <nav
+                class="footer-links"
+                aria-label="Footer navigation"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="booking.html">
+                    Booking
+                </a>
+
+                <a href="policy.html">
+                    Policy
+                </a>
+
+            </nav>
+
+
+
+            <!-- COPYRIGHT -->
+
+            <p class="copyright">
+                &copy; 2026 Derek Christian. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================================================================
+         CONTACT FORM — CLOUDFLARE WORKER + TURNSTILE
+         Reuses the existing Worker, Turnstile widget, and Apps Script.
+         No secrets are exposed in this page.
+         ================================================================ -->
+    <script>
+        (() => {
+            "use strict";
+
+            const WORKER_URL = "https://derek-christian-website-forms.screamingnemo69.workers.dev";
+            const form = document.getElementById("contact-form");
+            const status = document.getElementById("contact-status");
+            const button = form.querySelector('button[type="submit"]');
+            const widget = form.querySelector('.cf-turnstile');
+
+            function setSubmitting(submitting) {
+                button.disabled = submitting;
+                button.textContent = submitting ? "SUBMITTING…" : "SUBMIT";
+            }
+
+            function resetTurnstile() {
+                if (window.turnstile?.reset) window.turnstile.reset(widget);
+            }
+
+            form.addEventListener("submit", async (event) => {
+                event.preventDefault();
+                status.textContent = "";
+                if (!form.reportValidity()) return;
+
+                // Invisible Turnstile must provide a valid token before submission.
+                const turnstileToken = window.turnstile?.getResponse?.(widget);
+                if (!turnstileToken) {
+                    status.textContent = "Verification is still loading. Please wait a moment and try again.";
+                    return;
+                }
+
+                setSubmitting(true);
+                try {
+                    const response = await fetch(WORKER_URL, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            form: "contact",
+                            name: form.elements.name.value.trim(),
+                    email: form.elements.email.value.trim(),
+                    inquiry: form.elements.inquiry_type.value,
+                    organization: form.elements.organization.value.trim(),
+                    subject: form.elements.subject.value.trim(),
+                    message: form.elements.message.value.trim(),
+                            turnstileToken
+                        })
+                    });
+                    const result = await response.json();
+                    if (!response.ok || result.status !== "success") {
+                        throw new Error("Form submission was not accepted.");
+                    }
+                    form.reset();
+                    status.textContent = "Your message has been sent. Thank you for reaching out!";
+                } catch (error) {
+                    console.error("Contact submission failed:", error);
+                    status.textContent = "Your message could not be sent. Please try again.";
+                } finally {
+                    resetTurnstile();
+                    setSubmitting(false);
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
