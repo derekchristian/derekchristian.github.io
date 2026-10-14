@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================================
+         DEREK CHRISTIAN — SHOWS
+         shows.html
+
+         SECONDARY PAGE ARCHITECTURE
+         ---------------------------------------------------------------------
+         8px BLACK TOP RULE
+         PAGE NAVIGATION
+         1px GRAY BOTTOM RULE
+         PAGE CONTENT
+
+         PURPOSE
+         ---------------------------------------------------------------------
+         Dedicated public destination for current and upcoming live
+         performance dates.
+
+         The production Seated or Bandsintown widget handles:
+         - Upcoming performance dates
+         - Event information
+         - Ticket / event actions
+         - Built-in email / phone marketing CTA where supported
+
+         ARCHITECTURAL RULE
+         ---------------------------------------------------------------------
+         Classes, IDs, component structure, and CSS are permanent.
+
+         Future maintenance should only require:
+         - Replacing widget code
+         - Replacing href values
+         - Replacing text
+
+         Adding or changing content must NOT require renaming classes,
+         restructuring components, or modifying production architecture.
+         ===================================================================== -->
+
+
+    <!-- =====================================================================
+         00 — DOCUMENT SETTINGS
+         ===================================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="See upcoming Derek Christian live performances and get updates on future shows."
+    >
+
+    <title>Shows | Derek Christian</title>
+
+
+    <!-- FAVICON -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="IMGS/favicon.svg"
+    >
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lacquer&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================================
+         INLINE PAGE CSS
+         ===================================================================== -->
+
+    <style>
+
+        /* ==================================================================
+           00 — GLOBAL CONFIGURATION
+           ================================================================== */
+
+        :root {
+
+            /* COLORS */
+
+            --color-black: #000000;
+            --color-white: #ffffff;
+            --color-muted-text: #666666;
+            --color-rule: #d8d8d8;
+
+
+            /* SITE WIDTHS */
+
+            --page-width: 1180px;
+            --content-width: 1000px;
+
+
+            /* VERTICAL SPACING */
+
+            --section-spacing: 90px;
+
+
+            /* SITE HEADER */
+
+            --site-header-top-rule: 8px;
+
+        }
+
+
+
+        /* ==================================================================
+           01 — RESET & BASE STYLES
+           ================================================================== */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            margin: 0;
+
+            background: var(--color-white);
+
+            color: var(--color-black);
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            font-size: 16px;
+
+            line-height: 1.5;
+
+            overflow-x: hidden;
+        }
+
+
+        img {
+            display: block;
+
+            max-width: 100%;
+
+            height: auto;
+        }
+
+
+        a {
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+        iframe {
+            display: block;
+
+            max-width: 100%;
+
+            border: 0;
+        }
+
+
+        button {
+            font: inherit;
+        }
+
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+
+
+        /* ==================================================================
+           02 — SITE HEADER
+
+           SECONDARY PAGE STANDARD
+           ------------------------------------------------------------------
+           8px BLACK TOP RULE
+           PRIMARY NAVIGATION
+           1px GRAY BOTTOM RULE
+           ================================================================== */
+
+        .site-header {
+            width: 100%;
+
+            background: var(--color-white);
+
+            border-top:
+                var(--site-header-top-rule)
+                solid
+                var(--color-black);
+
+            border-bottom:
+                1px
+                solid
+                var(--color-rule);
+        }
+
+
+        .site-nav {
+            width:
+                min(
+                    var(--page-width),
+                    calc(100% - 3rem)
+                );
+
+            min-height: 64px;
+
+            margin-inline: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .site-nav-list {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin: 0;
+
+            padding: 0;
+
+            list-style: none;
+        }
+
+
+        .site-nav-link {
+            display: block;
+
+            padding:
+                1.35rem
+                1.5rem;
+
+            color: var(--color-black);
+
+            font-size: 0.72rem;
+
+            font-weight: 600;
+
+            letter-spacing: 0.16em;
+
+            line-height: 1;
+
+            text-transform: uppercase;
+
+            opacity: 0.7;
+
+            transition:
+                opacity 180ms ease,
+                transform 180ms ease;
+        }
+
+
+        .site-nav-link:hover,
+        .site-nav-link:focus-visible {
+            opacity: 1;
+
+            transform: translateY(-1px);
+        }
+
+
+
+        /* ==================================================================
+           03 — SHOWS
+           ================================================================== */
+
+        .shows {
+            width: 100%;
+
+            min-height: 60vh;
+
+            padding:
+                var(--section-spacing)
+                1.5rem;
+
+            background: var(--color-white);
+        }
+
+
+        .shows-inner {
+            width:
+                min(
+                    var(--content-width),
+                    100%
+                );
+
+            margin-inline: auto;
+        }
+
+
+        .shows-title {
+            margin:
+                0
+                0
+                2.5rem;
+
+            color: var(--color-black);
+
+            font-family:
+                "Lacquer",
+                sans-serif;
+
+            font-size:
+                clamp(
+                    2.25rem,
+                    4.5vw,
+                    3.75rem
+                );
+
+            font-weight: 400;
+
+            line-height: 1;
+
+            letter-spacing: 0;
+
+            text-align: center;
+
+            text-transform: uppercase;
+        }
+
+
+
+        /* ==================================================================
+           04 — EVENTS WIDGET
+
+           Permanent production container.
+
+           Seated OR Bandsintown embed code belongs inside this container.
+
+           The provider widget handles:
+           - Upcoming performance dates
+           - Event information
+           - Ticket / event actions
+           - Email / phone marketing CTA where supported
+           ================================================================== */
+
+        .events-widget {
+            width: 100%;
+
+            margin-inline: auto;
+        }
+
+
+        .events-widget iframe {
+            display: block;
+
+            width: 100%;
+
+            max-width: 100%;
+
+            border: 0;
+        }
+
+
+
+        /* ==================================================================
+           05 — BUTTON STANDARD
+
+           SITE-WIDE STANDARD
+           ------------------------------------------------------------------
+           Against solid white:
+           BLACK BUTTON
+           WHITE TEXT
+           ================================================================== */
+
+        .button {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-width: 210px;
+
+            min-height: 52px;
+
+            padding:
+                0.9rem
+                1.5rem;
+
+            background: var(--color-black);
+
+            color: var(--color-white);
+
+            border:
+                2px
+                solid
+                var(--color-black);
+
+            border-radius: 0;
+
+            cursor: pointer;
+
+            font-size: 0.72rem;
+
+            font-weight: 600;
+
+            letter-spacing: 0.14em;
+
+            line-height: 1;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            text-transform: uppercase;
+
+            transition:
+                background-color 180ms ease,
+                color 180ms ease,
+                transform 180ms ease;
+        }
+
+
+        .button:hover {
+            background: var(--color-white);
+
+            color: var(--color-black);
+        }
+
+
+        .button:focus-visible {
+            outline:
+                2px
+                solid
+                var(--color-black);
+
+            outline-offset: 4px;
+        }
+
+
+        .button:active {
+            transform: translateY(1px);
+        }
+
+
+
+        /* ==================================================================
+           06 — B2C FOOTER
+           ================================================================== */
+
+        .site-footer {
+            width: 100%;
+
+            padding:
+                2.5rem
+                1.5rem
+                3rem;
+
+            background: var(--color-white);
+
+            text-align: center;
+        }
+
+
+        .footer-inner {
+            width:
+                min(
+                    var(--content-width),
+                    100%
+                );
+
+            margin-inline: auto;
+        }
+
+
+
+        /* ------------------------------------------------------------------
+           06.1 — SOCIAL / DESTINATION ICONS
+           ------------------------------------------------------------------ */
+
+        .footer-socials {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 1.25rem;
+
+            margin-bottom: 2rem;
+        }
+
+
+        .footer-socials a {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            opacity: 0.65;
+
+            transition:
+                opacity 180ms ease,
+                transform 180ms ease;
+        }
+
+
+        .footer-socials a:hover,
+        .footer-socials a:focus-visible {
+            opacity: 1;
+
+            transform: translateY(-1px);
+        }
+
+
+        .footer-social-icon {
+            display: block;
+
+            width: 20px;
+
+            height: 20px;
+
+            object-fit: contain;
+        }
+
+
+
+        /* ------------------------------------------------------------------
+           06.2 — FOOTER LINKS
+           ------------------------------------------------------------------ */
+
+        .footer-links {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap:
+                0.75rem
+                1.75rem;
+        }
+
+
+        .footer-links a {
+            font-size: 0.68rem;
+
+            font-weight: 600;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+
+            opacity: 0.6;
+
+            transition:
+                opacity
+                180ms
+                ease;
+        }
+
+
+        .footer-links a:hover,
+        .footer-links a:focus-visible {
+            opacity: 1;
+        }
+
+
+
+        /* ------------------------------------------------------------------
+           06.3 — COPYRIGHT
+           ------------------------------------------------------------------ */
+
+        .copyright {
+            margin:
+                1.5rem
+                0
+                0;
+
+            font-size: 0.65rem;
+
+            opacity: 0.45;
+        }
+
+
+
+        /* ==================================================================
+           07 — TABLET / MOBILE
+           768px AND BELOW
+           ================================================================== */
+
+        @media (max-width: 768px) {
+
+            :root {
+                --section-spacing: 70px;
+            }
+
+
+
+            /* SITE HEADER */
+
+            .site-nav {
+                width:
+                    min(
+                        var(--page-width),
+                        calc(100% - 2rem)
+                    );
+
+                min-height: 58px;
+            }
+
+
+            .site-nav-link {
+                padding:
+                    1.2rem
+                    1rem;
+
+                font-size: 0.68rem;
+            }
+
+
+
+            /* SHOWS */
+
+            .shows {
+                min-height: 55vh;
+            }
+
+        }
+
+
+
+        /* ==================================================================
+           08 — SMALL MOBILE
+           480px AND BELOW
+           ================================================================== */
+
+        @media (max-width: 480px) {
+
+            :root {
+                --section-spacing: 60px;
+            }
+
+
+            body {
+                font-size: 15px;
+            }
+
+
+
+            /* SITE HEADER */
+
+            .site-nav {
+                width: 100%;
+
+                min-height: auto;
+
+                padding:
+                    0.35rem
+                    0.5rem;
+            }
+
+
+            .site-nav-list {
+                width: 100%;
+            }
+
+
+            .site-nav-link {
+                padding:
+                    0.9rem
+                    0.65rem;
+
+                font-size: 0.62rem;
+
+                letter-spacing: 0.09em;
+            }
+
+
+
+            /* SHOWS */
+
+            .shows {
+                min-height: 50vh;
+
+                padding-left: 1rem;
+
+                padding-right: 1rem;
+            }
+
+
+            .shows-title {
+                font-size:
+                    clamp(
+                        1.9rem,
+                        9vw,
+                        2.75rem
+                    );
+            }
+
+
+
+            /* FOOTER */
+
+            .site-footer {
+                padding:
+                    2.25rem
+                    1rem
+                    2.5rem;
+            }
+
+
+            .footer-socials {
+                gap: 1.1rem;
+
+                margin-bottom: 1.75rem;
+            }
+
+
+            .footer-social-icon {
+                width: 19px;
+
+                height: 19px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================================
+         01 — SITE HEADER
+
+         SECONDARY B2C PAGE STANDARD
+         ---------------------------------------------------------------------
+         8px BLACK TOP RULE
+         PRIMARY NAVIGATION
+         1px GRAY BOTTOM RULE
+         ===================================================================== -->
+
+    <header class="site-header">
+
+        <nav
+            class="site-nav"
+            aria-label="Primary navigation"
+        >
+
+            <ul class="site-nav-list">
+
+                <li>
+                    <a
+                        class="site-nav-link"
+                        href="index.html#music"
+                    >
+                        Music
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="site-nav-link"
+                        href="index.html#shop"
+                    >
+                        Shop
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="site-nav-link"
+                        href="shows.html"
+                        aria-current="page"
+                    >
+                        Shows
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="site-nav-link"
+                        href="https://youtube.com/@derekchristianmusic?sub_confirmation=1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Video
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="site-nav-link"
+                        href="index.html#signup"
+                    >
+                        Sign Up
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================================
+         MAIN CONTENT
+         ===================================================================== -->
+
+    <main>
+
+
+        <!-- =================================================================
+             02 — SHOWS
+             ================================================================= -->
+
+        <section
+            class="shows"
+            id="shows"
+            aria-labelledby="shows-title"
+        >
+
+            <div class="shows-inner">
+
+                <h1
+                    class="shows-title"
+                    id="shows-title"
+                >
+                    Shows
+                </h1>
+
+
+
+                <!-- =========================================================
+                     EVENTS WIDGET
+
+                     Permanent production container.
+
+                     POPULATE:
+                     Insert the production Seated OR Bandsintown
+                     widget code inside .events-widget.
+
+                     The provider widget handles the event/calendar
+                     interface and its built-in marketing CTA.
+                     ========================================================= -->
+
+                <div class="events-widget">
+
+                    <!--
+                        SEATED OR BANDSINTOWN EVENTS WIDGET
+                    -->
+<script charset="utf-8" src="https://widgetv3.bandsintown.com/main.min.js"></script>
+  <a class="bit-widget-initializer"
+    
+	data-artist-name="id_15623307"
+	
+	data-events-to-display=""
+	data-background-color="rgba(255,255,255,1)"
+	data-separator-color="rgba(221,221,221,1)"
+	data-text-color="rgba(0,0,0,1)"
+	data-font="Tahoma"
+	data-auto-style="true"
+	
+	data-button-label-capitalization="capitalize"
+	data-header-capitalization="uppercase"
+	data-location-capitalization="capitalize"
+	data-venue-capitalization="capitalize"
+	data-display-local-dates="true"
+	data-local-dates-position="tab"
+	data-display-past-dates="true"
+	data-display-details="false"
+	data-display-lineup="false"
+	data-display-start-time="false"
+	data-social-share-icon="false"
+	data-display-limit="all"
+	
+	data-date-format="MMM. D, YYYY"
+	data-date-orientation="horizontal"
+	data-date-border-color="#4A4A4A"
+	data-date-border-width="1px"
+	data-date-capitalization="capitalize"
+	data-date-border-radius="10px"
+	
+	data-event-ticket-cta-size="medium"
+	data-event-custom-ticket-text=""
+	data-event-ticket-text="TICKETS"
+	data-event-ticket-icon="false"
+	data-event-ticket-cta-text-color="rgba(0,0,0,1)"
+	data-event-ticket-cta-bg-color="rgba(255,255,255,1)"
+	data-event-ticket-cta-border-color="rgba(0,0,0,1)"
+	data-event-ticket-cta-border-width="1px"
+	data-event-ticket-cta-border-radius="2px"
+	
+	data-sold-out-button-text-color="rgba(0,0,0,1)"
+	data-sold-out-button-background-color="rgba(255,255,255,1)"
+	data-sold-out-button-border-color="rgba(0,0,0,1)"
+	data-sold-out-button-clickable="true"
+	
+	data-event-rsvp-position="left"
+	data-event-rsvp-cta-size="medium"
+	data-event-rsvp-only-show-icon="false"
+	data-event-rsvp-text="RSVP"
+	data-event-rsvp-icon="false"
+	data-event-rsvp-cta-text-color="rgba(0,0,0,1)"
+	data-event-rsvp-cta-bg-color="rgba(255,255,255,1)"
+	data-event-rsvp-cta-border-color="rgba(0,0,0,1)"
+	data-event-rsvp-cta-border-width="1px"
+	data-event-rsvp-cta-border-radius="2px"
+	
+	data-follow-section-position="top"
+	data-follow-section-alignment="center"
+	data-follow-section-header-text="Get updates on new shows, new music, and more"
+	data-follow-section-cta-size="medium"
+	data-follow-section-cta-text="FOLLOW"
+	data-follow-section-cta-icon="false"
+	data-follow-section-cta-text-color="rgba(0,0,0,1)"
+	data-follow-section-cta-bg-color="rgba(255,255,255,1)"
+	data-follow-section-cta-border-color="rgba(0,0,0,1)"
+	data-follow-section-cta-border-width="1px"
+	data-follow-section-cta-border-radius="2px"
+	
+	data-play-my-city-position="bottom"
+	data-play-my-city-alignment="center"
+	data-play-my-city-header-text="Don’t see a show near you?"
+	data-play-my-city-cta-size="medium"
+	data-play-my-city-cta-text="REQUEST A SHOW"
+	data-play-my-city-cta-icon="false"
+	data-play-my-city-cta-text-color="rgba(0,0,0,1)"
+	data-play-my-city-cta-bg-color="rgba(255,255,255,1)"
+	data-play-my-city-cta-border-color="rgba(0,0,0,1)"
+	data-play-my-city-cta-border-width="1px"
+	data-play-my-city-cta-border-radius="2px"
+	
+	data-optin-font=""
+	data-optin-text-color=""
+	data-optin-bg-color=""
+	data-optin-cta-text-color=""
+	data-optin-cta-bg-color=""
+	data-optin-cta-border-width=""
+	data-optin-cta-border-radius=""
+	data-optin-cta-border-color=""
+	
+	data-language="en"
+	data-layout-breakpoint="900"
+	data-app-id="1fd25e458bc80e108565e73254669f35"
+	data-affil-code=""
+	data-bit-logo-position="bottomRight"
+	data-bit-logo-color="rgba(255,255,255,1)"
+	
+    ></a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================================
+         03 — B2C FOOTER
+
+         POPULATE:
+         Replace social href values with production profile URLs.
+
+         Shop currently returns to the homepage Shop section.
+         When shop.html launches, change only that href.
+         ===================================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+
+            <!-- =============================================================
+                 SOCIAL / DESTINATION ICONS
+                 ============================================================= -->
+
+            <nav
+                class="footer-socials"
+                aria-label="Social media and shop"
+            >
+
+
+                <!-- FACEBOOK -->
+
+                <a
+                    href="https://facebook.com/officialderekchristianmusic"
+                    aria-label="Derek Christian on Facebook"
+                >
+                    <img
+                        src="IMGS/icons/facebook.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+
+                <!-- INSTAGRAM -->
+
+                <a
+                    href="https://instagram.com/derekchristianmusic"
+                    aria-label="Derek Christian on Instagram"
+                >
+                    <img
+                        src="IMGS/icons/instagram.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+
+                <!-- TIKTOK -->
+
+                <a
+                    href="https://tiktok.com/@derekchristianmusic"
+                    aria-label="Derek Christian on TikTok"
+                >
+                    <img
+                        src="IMGS/icons/tiktok.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+
+                <!-- YOUTUBE -->
+
+                <a
+                    href="https://youtube.com/@derekchristianmusic?sub_confirmation=1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Derek Christian on YouTube"
+                >
+                    <img
+                        src="IMGS/icons/youtube.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+
+                <!-- X -->
+
+                <a
+                    href="https://x.com/OfficialDerekCM"
+                    aria-label="Derek Christian on X"
+                >
+                    <img
+                        src="IMGS/icons/twitter-x.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+
+                <!-- SHOP -->
+
+                <a
+                    href="index.html#shop"
+                    aria-label="Derek Christian shop"
+                >
+                    <img
+                        src="IMGS/icons/bag.svg"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+            </nav>
+
+
+
+            <!-- =============================================================
+                 FOOTER LINKS
+                 ============================================================= -->
+
+            <nav
+                class="footer-links"
+                aria-label="Footer navigation"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="booking.html">
+                    Booking
+                </a>
+
+                <a href="policy.html">
+                    Policy
+                </a>
+
+            </nav>
+
+
+
+            <!-- COPYRIGHT -->
+
+            <p class="copyright">
+                &copy; 2026 Derek Christian. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
